@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pacer_white"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent_pacer_white"
+        android:padding="5dp"
+        android:orientation="vertical">
+          <TextView
+        android:id="@+id/tvSeparatorTotalExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:text="0000000"
+        android:textColor="@color/transparent_red"
+        android:textSize="12sp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+     <TextView
+         android:id="@+id/tvSeparatorTotalIncome"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:paddingRight="10dp"
+         android:text="10900000"
+         android:textSize="12sp"
+         android:textAppearance="?android:attr/textAppearanceSmall"
+         android:textColor="@color/transparent_green" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSeparatorHomeGTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Todays"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black" />
+
+</RelativeLayout>
+<!-- From: file:/home/samson/android-development-studio/app/src/main/res/layout/listview_home_separator.xml -->

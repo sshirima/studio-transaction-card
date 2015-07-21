@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="application_version">Version 1</string>
+    <string name="application_copyright">© 2014</string>
+    <string name="application_rights">All rights reserved</string>
+    <string name="app_name">TCard</string>
+    <string name="activity_transaction_details">Details</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_account_newaccount">Add new Account</string>
+    <string name="activity_view_by_descr">Transactions</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="category_view">Category</string>
+    <string name="new_record">New record</string>
+    <string name="dialog_title_change_category">Change category</string>
+    <string name="dialog_title_change_account">Change account</string>
+    <string name="dialog_title_new_record">New transaction</string>
+    <string name="dialog_title_delete">Delete</string>
+    <string name="dialog_title_description">Choose description</string>
+    <string name="dialog_message_delete">Record will be permanent deleted?</string>
+    <string name="dialog_button_delete">Delete</string>
+    <string name="dialog_button_cancel">Cancel</string>
+    <string name="dialog_confirm_changes_message">Do you want to save changes?</string>
+    <string name="dialog_confirm_changes_button_neg">Don\'t save</string>
+    <string name="dialog_confirm_changes_button_pos">Save</string>
+    <string name="empty_field">Empty field</string>
+    <string name="view_summary">Summary</string>
+    <string name="account">Accounts</string>
+    <string name="change_category">Change category</string>
+    <string name="currency_rates">Currency rates</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="income">Income:</string>
+    <string name="expsenses">Expenses:</string>
+    <string name="balance">Balance:</string>
+    <string name="income_checkbox">Income</string>
+    <string name="description">Description</string>
+    <string name="amount">Amount</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="expenses_checkbox">Expenses</string>
+    <string name="exchange_rates">Exchange rates</string>
+    <string name="sign_equal">Equal sign</string>
+    <string name="flag">Flag</string>
+    <string name="about_title">About</string>
+    <string name="preferences">Preferences</string>
+    <string name="import_and_export">Import and export</string>
+    <string name="launcher_icon">Launcher icon</string>
+    <string name="settings">Settings</string>
+    <string name="password_disabled">Password disabled</string>
+    <string name="password_enabled">Password enabled</string>
+    <string name="password_set_title">Set password</string>
+    <string name="password_set_summary">Create/Change password</string>
+    <string name="password_enable_title">Enable password</string>
+    <string name="default_account_title">Default account</string>
+    <string name="currency_title">Currency</string>
+    <string name="prefs_account_sum">Change default account</string>
+    <string name="prefs_currency_sum">Change default currency</string>
+    <string name="transfer_data">Data transfer</string>
+    <string name="email_address">Email address:</string>
+    <string name="email_subject">Subject:</string>
+    <string name="email_body">Comments:</string>
+    <string name="email_hints_address">example@gmail.com</string>
+    <string name="email_hints_subject">Subject/Title</string>
+    <string name="email_hints_body">Put some comments</string>
+    <string name="email_dialog_title">Send attachement</string>
+    <string name="action_description">Description</string>
+    <string name="activity_title_description">Descriptions</string>
+    <string name="imv_content_des_edit_description">EditDescription</string>
+    <string name="imv_content_des_edit_category">EditCategory</string>
+    <string name="imv_content_des_edit_account">EditAccount</string>
+    <string name="imv_content_des_edit_date">EditDate</string>
+    <string name="imv_content_des_edit_time">EditTime</string>
+    <string name="trans_details_tv_label_amount">Amount</string>
+    <string name="trans_details_tv_label_descr">Description</string>
+    <string name="trans_details_tv_label_account">Account</string>
+    <string name="trans_details_tv_label_cat">Category</string>
+    <string name="imv_content_des_nodata">No record</string>
+    <string name="menuitem_currrencyX_refresh">Refresh</string>
+    <string name="trans_details_tv_label_time">Time</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="category">Category</string>
+    <string name="date_and_time">Time of date</string>
+    
+    <string name="new_acc_label_name">Account name:</string>
+	<string name="new_acc_name_et_hint">Enter new account name</string>
+	<string name="new_acc_name_dialog_title">Create new account</string>
+	<string name="new_acc_name_but_create">Create</string>
+	<string name="new_acc_name_but_cancel">Cancel</string>
+	
+	<string name="act_mode_acc_activity_text">Display text</string>
+	<string name="dialog_delete_account_title">Delete account</string>
+	<string name="dialog_delete_account_message">Deleting selected account(s) 
+	    										will also remove permanently all
+	    										transactions associated with the account(s),
+	    										Are you sure you want to delele?</string>
+	<string name="dialog_edit_acc_title">Edit account settings</string>
+	<string name="dialog_edit_button_save">Save changes</string>
+	
+	
+    <string-array name="time_filter_list">
+        <item>Today</item>
+        <item>Yesterday</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+        <item>All</item>
+    </string-array>
+    <string-array name="currency_list">
+        <item>USD</item>
+        <item>TZS</item>
+        <item>KES</item>
+        <item>UGX</item>
+        <item>EUR</item>
+    </string-array>
+
+</resources>

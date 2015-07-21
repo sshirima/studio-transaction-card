@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="pacer_white">#E5DED0</color>
+    <color name="practical_beige">#C9B59C</color>
+    <color name="tea_chest">#7C654B</color>
+    <color name="gray">#e9e9e9</color>
+    <color name="red">#ff0000</color>
+    <color name="green">#008000</color>
+    <color name="blue">#0000ff</color>
+    <color name="transparent_pacer_white">#09000000</color>
+ 	<color name="transparent_tea_chest">#C07C654B</color>
+ 	<color name="transparent_practical_baige">#C0C9B59C</color>
+ 	<color name="transparent_gray">#C0696969</color>
+ 	<color name="transparent_black">#80000000</color>
+ 	<color name="transparent_red">#80ff0000</color>
+ 	<color name="transparent_green">#80008000</color>
+ 	<color name="transparent_blue">#800000ff</color>
+</resources>

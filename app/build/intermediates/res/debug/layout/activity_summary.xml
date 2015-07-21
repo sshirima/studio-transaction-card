@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <LinearLayout
+            android:id="@+id/graphLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+
+            <CheckBox
+                android:id="@+id/cbIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:checked="true"
+                android:text="@string/income_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cbExpenses"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/expenses_checkbox" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <ExpandableListView
+        android:id="@+id/elSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/frameLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:divider="@null"
+        android:dividerHeight="10dp" >
+    </ExpandableListView>
+
+</RelativeLayout><!-- From: file:/home/samson/android-development-studio/app/src/main/res/layout/activity_summary.xml -->

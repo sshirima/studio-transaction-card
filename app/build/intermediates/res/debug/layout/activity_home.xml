@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayoutHome"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pacer_white"
+    tools:context=".HomeActivity" >
+
+    <ListView
+        android:id="@+id/lvHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mainLayoutHomeFooter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:choiceMode="none"
+        android:divider="@null"
+        android:dividerHeight="5dp" >
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/mainLayoutHomeFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/transparent_pacer_white"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tvHomeSummaryExpensesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total expenses for today:"
+            android:textColor="@color/transparent_red"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvHomeSummaryIncomeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvHomeSummaryExpensesLabel"
+            android:text="Total income for today:"
+            android:textColor="@color/transparent_green"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivActivityHomeNoData"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+           android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/imv_content_des_nodata"
+        android:src="@drawable/ic_nodata" />
+
+    <TextView
+           android:visibility="gone"
+        android:id="@+id/tvActivityHomeNoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivActivityHomeNoData"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:text="@string/imv_content_des_nodata"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/transparent_black"
+        android:textStyle="bold" />
+
+</RelativeLayout><!-- From: file:/home/samson/android-development-studio/app/src/main/res/layout/activity_home.xml -->

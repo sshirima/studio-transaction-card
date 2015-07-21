@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/samson/android-tools/android-sdk-linux/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/home/samson/android-development-studio/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-c76fa69b836fc513efd9e163208c638db106280e.jar" />
+    </item>
+    <item
+        jar="/home/samson/android-development-studio/app/lib/GraphView-3.1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7ffc41c72432299f41689c8f707d0d89254d59d5">
+        <dex dex="/home/samson/android-development-studio/app/build/intermediates/pre-dexed/debug/GraphView-3.1.2-5fe494e6e23255d1d6a7eacc6c8cc0e3d6f19aef.jar" />
+    </item>
+
+</items>

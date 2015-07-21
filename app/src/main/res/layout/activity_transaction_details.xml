@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/gray" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/white"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/tvTransactionDetailLabelAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trans_details_tv_label_amount"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTransactionDetailValueAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTransactionDetailLabelAmount"
+                android:enabled="false"
+                android:hint="@string/amount"
+                android:text="@string/amount" />
+
+            <View
+                android:layout_width="@dimen/separator_width"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/ivTransactionDetailEditAmount"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTransactionDetailEditAmount"
+                android:background="@color/transparent_gray" />
+
+            <ImageView
+                android:id="@+id/ivTransactionDetailEditAmount"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/imv_content_des_edit_date"
+                android:src="@drawable/ic_action_edit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/tvTransactionDetailLabelAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/trans_details_tv_label_account"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTransactionDetailAccountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTransactionDetailLabelAccount"
+                android:enabled="false"
+                android:hint="@string/account"
+                android:text="@string/account" >
+            </EditText>
+
+            <View
+                android:layout_width="@dimen/separator_width"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTransactionDetailEditAccount"
+                android:background="@color/transparent_gray" />
+
+            <ImageView
+                android:id="@+id/ivTransactionDetailEditAccount"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/imv_content_des_edit_account"
+                android:src="@drawable/ic_action_edit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/tvTransactionDetailLabelDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/trans_details_tv_label_descr"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <AutoCompleteTextView
+                android:id="@+id/actvTransactionDetailValueDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTransactionDetailLabelDetails"
+                android:enabled="false"
+                android:hint="@string/description"
+                android:text="@string/description" >
+            </AutoCompleteTextView>
+
+            <View
+                android:layout_width="@dimen/separator_width"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTransactionDetailEditDescription"
+                android:background="@color/transparent_gray" />
+
+            <ImageView
+                android:id="@+id/ivTransactionDetailEditDescription"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/imv_content_des_edit_description"
+                android:src="@drawable/ic_action_edit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/tvTransactionDetailLabelCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/trans_details_tv_label_cat"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTransactionDetailValueCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTransactionDetailLabelCategory"
+                android:enabled="false"
+                android:hint="@string/category"
+                android:text="@string/category" >
+            </EditText>
+
+            <View
+                android:layout_width="@dimen/separator_width"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTransactionDetailEditCategory"
+                android:background="@color/transparent_gray" />
+
+            <ImageView
+                android:id="@+id/ivTransactionDetailEditCategory"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/imv_content_des_edit_category"
+                android:src="@drawable/ic_action_edit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/tvTransactionDetailLabelTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/trans_details_tv_label_time"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTransactionDetailValueTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTransactionDetailLabelTime"
+                android:enabled="false"
+                android:hint="@string/date_and_time"
+                android:text="@string/date_and_time" >
+            </EditText>
+
+            <ImageView
+                android:id="@+id/ivTransactionDetailEditTime"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/time"
+                android:src="@android:drawable/ic_menu_recent_history" />
+
+            <View
+                android:layout_width="@dimen/separator_width"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTransactionDetailEditTime"
+                android:background="@color/transparent_gray" />
+
+            <ImageView
+                android:id="@+id/ivTransactionDetailEditDate"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTransactionDetailEditTime"
+                android:contentDescription="@string/date"
+                android:src="@android:drawable/ic_menu_my_calendar" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

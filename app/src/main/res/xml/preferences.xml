@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="enable_password"
+        android:summary="@string/password_disabled"
+        android:title="@string/password_enable_title" />
+
+    <EditTextPreference
+        android:key="set_password"
+        android:summary="@string/password_set_summary"
+        android:title="@string/password_set_title" />
+
+    <ListPreference
+        android:key="default_account"
+        android:summary="@string/prefs_account_sum"
+        android:title="@string/default_account_title" />
+    <ListPreference
+        android:key="currency"
+        android:summary="@string/prefs_currency_sum"
+        android:title="@string/currency_title" />
+</PreferenceScreen>
