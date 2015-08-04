@@ -1,17 +1,18 @@
 package com.example.transactioncard.database;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import com.example.transactioncard.BuildConfig;
-import com.example.transactioncard.object.Currency;
+import com.example.transactioncard.object.CurrencyCashFlow;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.view.ViewDebug.FlagToString;
 
 public class CurrencyTable {
 
@@ -24,12 +25,11 @@ public class CurrencyTable {
 	 */
 	public CurrencyTable (Context context){
 		String methodName = "CurrencyTable";
-		String operation = "Create Currency table constructor";
+		String operation = "Create CurrencyCashFlow table constructor";
 		ConstsDatabase.logINFO(STR_Classname, methodName, operation);
 		
 		cashFlowDB = new CashFlowDB(context);
 		this.applicationContext = context;
-		
 	}
 	/*
 	 * Open the Db
@@ -46,60 +46,69 @@ public class CurrencyTable {
 		cashFlowDB.close();
 	}
 	/*
-	 * Insert new currency to DB
+	 * Insert new currencyCashFlow to DB
 	 */
-	public Currency insertCurrencySqliteDB(Currency currency) {
+	public CurrencyCashFlow insertCurrencySqliteDB(CurrencyCashFlow currencyCashFlow) {
 		String methodName = "insertCurrencySqliteDB";
-		String operation = "Insert new currency into the DB";
+		String operation = "Insert new currencyCashFlow into the DB";
 		
 		/*
-		 * Insert new currency into the sqliteDB
+		 * Insert new currencyCashFlow into the sqliteDB
 		 */
 		ContentValues contentValues = new ContentValues();
-		Currency newCurrency = null;
+		CurrencyCashFlow newCurrencyCashFlow = null;
 		try {
 			ConstsDatabase.logINFO(STR_Classname, methodName, operation);
 			/*
-			 * Put currency values
+			 * Put currencyCashFlow values
 			 */
-			contentValues = setContentValues(currency);
-			
-			//Insert new currency into currency table
+			contentValues.put(ConstsDatabase.CURRENCY_CODE,
+					currencyCashFlow.getCurrencyCode());
+			contentValues.put(ConstsDatabase.CURRENCY_NAME,
+					currencyCashFlow.getCurrencyName());
+			contentValues.put(ConstsDatabase.CURRENCY_UPDATETIME,
+					currencyCashFlow.getUpdateTime());
+			contentValues.put(ConstsDatabase.CURRENCY_FLAG,
+					currencyCashFlow.getFlagId());
+			contentValues.put(ConstsDatabase.CURRENCY_RATE,
+					currencyCashFlow.getRateFromUSD());
+			//Insert new currencyCashFlow into currencyCashFlow table
 			long insertId = sqliteDatabase.insert(ConstsDatabase.CURRENCY_TABLE, null,
 					contentValues);
 			
-			newCurrency = getCurrencyById(insertId);
+			newCurrencyCashFlow = getCurrencyById(insertId);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			ConstsDatabase.logERROR(methodName, operation);
 			e.printStackTrace();
 		}
-		return newCurrency;
+		return newCurrencyCashFlow;
 	}
 	/*
-	 * Update currency to Db
+	 * Update currencyCashFlow to Db
 	 */
-	public boolean updateTransactioSqliteDB(Currency currency) {
+	public boolean updateRateByCurrencyCode(CurrencyCashFlow currencyCashFlow) {
 		String methodName = "updateCurrencySqliteDB";
-		String operation = "Update currency by Id";
+		String operation = "Update currencyCashFlow by Id";
 		/*
-		 * Add currency parameters to contentValues
+		 * Add currencyCashFlow parameters to contentValues
 		 */
-		ContentValues contentValues = setContentValues(currency);
+
+		ContentValues contentValues = setContentValues(currencyCashFlow);
 		/*
-		 * Update currency on the sqliteDB
+		 * Update currencyCashFlow on the sqliteDB
 		 */
 		String tableName = ConstsDatabase.CURRENCY_TABLE;
-		String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.CURRENCY_ID);
-		String[] conditionArgs = new String[]{""+currency.getCurrencyId()};
+		String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.CURRENCY_CODE);
+		String[] conditionArgs = new String[]{""+ currencyCashFlow.getCurrencyCode()};
 		int updatedRows = 0;
 		try {
 			updatedRows = sqliteDatabase
-					.update(tableName, contentValues,condition,conditionArgs);
+					.update(tableName, contentValues, condition, conditionArgs);
 			if (BuildConfig.DEBUG){
 				String logMsg = ">>>"+operation;
-				Log.d(STR_Classname+"."+methodName, logMsg+": "+currency
-						.getCurrencyId());
+				Log.d(STR_Classname+"."+methodName, logMsg+": "+ currencyCashFlow
+						.getCurrencyCode());
 			}
 		} catch (Exception e) {
 			ConstsDatabase.logERROR(methodName, operation);
@@ -108,67 +117,66 @@ public class CurrencyTable {
 		return updatedRows == 1 ? true:false;
 	}
 	
-	private ContentValues setContentValues(Currency currency) {
+	private ContentValues setContentValues(CurrencyCashFlow currencyCashFlow) {
 		ContentValues contentValues = new ContentValues();
-		
-		if (currency != null) {
+		long updatedTime = Calendar.getInstance().getTimeInMillis();
+
+		if (currencyCashFlow != null) {
 			/*
-			 * Put currency parameters to the ContentValues instance
+			 * Put currencyCashFlow parameters to the ContentValues instance
 			 */
-			contentValues.put(ConstsDatabase.CURRENCY_CODE,
-					currency.getCurrencyCode());
-			contentValues.put(ConstsDatabase.CURRENCY_NAME,
-					currency.getCurrencyName());
+			contentValues.put(ConstsDatabase.CURRENCY_UPDATETIME,
+					updatedTime);
 			contentValues.put(ConstsDatabase.CURRENCY_RATE,
-					currency.getRateFromUSD());
-			contentValues.put(ConstsDatabase.CURRENCY_FLAG,
-					currency.getFlagId());
+					currencyCashFlow.getRateFromUSD());
 			}
 		
 		return contentValues;
 	}
 	
 	/*
-	 * Read one currency by code
-	 */public Currency getCurrencyById(Currency currency) {
-			String methodName = "getCurrencyById";
-			String operation = "Get currency from the currency table";
+	 * Read one currencyCashFlow by code
+	 */
+
+	public CurrencyCashFlow getCurrencyByCode(String currencyCode) {
+		String methodName = "getCurrencyById";
+		String operation = "Get currencyCashFlow from the currencyCashFlow table";
 			/*
 			 * Prepare the query
 			 */
-			Currency returnCurrency = null;
-			String retunColumns = "*";
-			String tableName = ConstsDatabase.CURRENCY_TABLE;
-			String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.CURRENCY_CODE);
-			String[] conditionArgs = new String[]{""+currency.getCurrencyCode()};
+		CurrencyCashFlow returnCurrencyCashFlow = null;
+		String retunColumns = "*";
+		String tableName = ConstsDatabase.CURRENCY_TABLE;
+		String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.CURRENCY_CODE);
+		String[] conditionArgs = new String[]{""+ currencyCode};
 			/*
 			 * Query the database from the given ID
 			 */
-			String query = String.format(ConstsDatabase.SQLSYNTX_QUERY_SELECT_WHERE,
-					retunColumns, tableName, condition);
-			Cursor cursor= null;
-			try {
-				ConstsDatabase.logINFO(STR_Classname, methodName, operation);
-				
-				cursor = sqliteDatabase.rawQuery(query,conditionArgs);
-				if (cursor.moveToFirst()) {
-					while (!cursor.isAfterLast()) {
-						returnCurrency = cursorToCurrency(cursor);
-						cursor.moveToNext();
-					}
+		String query = String.format(ConstsDatabase.SQLSYNTX_QUERY_SELECT_WHERE,
+				retunColumns, tableName, condition);
+		Cursor cursor= null;
+		try {
+			ConstsDatabase.logINFO(STR_Classname, methodName, operation);
+
+			cursor = sqliteDatabase.rawQuery(query,conditionArgs);
+			if (cursor.moveToFirst()) {
+				while (!cursor.isAfterLast()) {
+					returnCurrencyCashFlow = cursorToCurrency(cursor);
+					cursor.moveToNext();
 				}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-			cursor.close();
-			return returnCurrency;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		cursor.close();
+		return returnCurrencyCashFlow;
+	}
 	
 	/*
 	 * Read all currency
 	 */
-	 public List<Currency> getCurrenciesAll(){
+	 public List<CurrencyCashFlow> getCurrenciesAll(){
 			String methodName = "getCurrenciesAll";
 			String operation = "Get all currency from the account table";
 			/*
@@ -181,7 +189,7 @@ public class CurrencyTable {
 			
 			Cursor cursor = sqliteDatabase.rawQuery(query,null);
 			
-			List<Currency> returnList = new ArrayList<Currency>();
+			List<CurrencyCashFlow> returnList = new ArrayList<CurrencyCashFlow>();
 			
 			/*
 			 * Extract currency(s) from the cursor
@@ -189,8 +197,8 @@ public class CurrencyTable {
 			if (cursor.moveToFirst()){
 				
 				while (!cursor.isAfterLast()) {
-					Currency newCurrency = cursorToCurrency(cursor);
-					returnList.add(newCurrency);
+					CurrencyCashFlow newCurrencyCashFlow = cursorToCurrency(cursor);
+					returnList.add(newCurrencyCashFlow);
 					cursor.moveToNext();
 				}
 			}
@@ -199,14 +207,14 @@ public class CurrencyTable {
 	/*
 	 * Get currency by Id
 	 */
-	public Currency getCurrencyById(long id) {
+	public CurrencyCashFlow getCurrencyById(long id) {
 		String methodName = "getCurrencyById";
-		String operation = "Get currency from the currency table";
+		String operation = "Get currencyCashFlow from the currencyCashFlow table";
 		/*
 		 * Prepare the query
 		 */
 		
-		Currency currency = null;
+		CurrencyCashFlow currencyCashFlow = null;
 		String retunColumns = "*";
 		String tableName = ConstsDatabase.CURRENCY_TABLE;
 		String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.CURRENCY_ID);
@@ -223,7 +231,7 @@ public class CurrencyTable {
 			cursor = sqliteDatabase.rawQuery(query,conditionArgs);
 			if (cursor.moveToFirst()) {
 				while (!cursor.isAfterLast()) {
-					currency = cursorToCurrency(cursor);
+					currencyCashFlow = cursorToCurrency(cursor);
 					cursor.moveToNext();
 				}
 			}
@@ -232,33 +240,33 @@ public class CurrencyTable {
 			e.printStackTrace();
 		}
 		cursor.close();
-		return currency;
+		return currencyCashFlow;
 	}
 	/*
-	 * Delete currency to DB
+	 * Delete currencyCashFlow to DB
 	 */
-	public boolean deleteCurrencySqliteDB(Currency currency){
+	public boolean deleteCurrencySqliteDB(CurrencyCashFlow currencyCashFlow){
 		String methodName = "deleteCurrencySqliteDB";
-		String operation = "Delete currency from currencyTable";
+		String operation = "Delete currencyCashFlow from currencyTable";
 		ConstsDatabase.logINFO(STR_Classname, methodName, operation);
 		
 		/*
-		 * First delete currencys with the given currency
+		 * First delete currencys with the given currencyCashFlow
 		 */
-		String currencyCode = currency.getCurrencyCode();
+		String currencyCode = currencyCashFlow.getCurrencyCode();
 		String tableName = ConstsDatabase.CURRENCY_TABLE;
 		
 		String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.CURRENCY_CODE);
 		String[] conditionArgs = new String[]{currencyCode};
 		int deletedCurrencies = sqliteDatabase.delete(tableName, condition, conditionArgs);
-		ConstsDatabase.logINFO(STR_Classname, methodName, deletedCurrencies+": Currency were deleted");
+		ConstsDatabase.logINFO(STR_Classname, methodName, deletedCurrencies+": CurrencyCashFlow were deleted");
 		
 		return deletedCurrencies == 1?true:false;
 	}
 	/*
 	 * Cursor to currency
 	 */
-	public Currency cursorToCurrency(Cursor cursor) {
+	public CurrencyCashFlow cursorToCurrency(Cursor cursor) {
 		// TODO Auto-generated method stub
 		String methodName = "cursorToCurrency";
 		String operation = "Convert cursor to cursorToCurrency instance";
@@ -275,15 +283,18 @@ public class CurrencyTable {
 				.getColumnIndex(ConstsDatabase.CURRENCY_RATE);
 		int flagIdIndex = cursor
 				.getColumnIndex(ConstsDatabase.CURRENCY_FLAG);
+		int updateTimeIndex = cursor
+				.getColumnIndex(ConstsDatabase.CURRENCY_UPDATETIME);
 		/*
-		 * Set currency values
+		 * Set currencyCashFlow values
 		 */
-		Currency currency = new Currency(applicationContext, cursor.getString(CodeIndex));
-		currency.setCurrencyId(cursor.getInt(idIndex));
-		currency.setCurrencyName(cursor.getString(nameIndex));
-		currency.setCurrencyRate(cursor.getDouble(rateIndex));
-		currency.setFlagId(cursor.getInt(flagIdIndex));
+		CurrencyCashFlow currencyCashFlow = new CurrencyCashFlow(applicationContext, cursor.getString(CodeIndex));
+		currencyCashFlow.setCurrencyId(cursor.getInt(idIndex));
+		currencyCashFlow.setCurrencyName(cursor.getString(nameIndex));
+		currencyCashFlow.setCurrencyRate(cursor.getDouble(rateIndex));
+		currencyCashFlow.setFlagId(cursor.getInt(flagIdIndex));
+		currencyCashFlow.setUpdateTime(cursor.getLong(updateTimeIndex));
 		
-		return currency;
+		return currencyCashFlow;
 	}
 }

@@ -5,6 +5,9 @@ import java.util.Calendar;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.transactioncard.database.ConstsDatabase;
+import com.example.transactioncard.database.CurrencyTable;
+
 public class CurrencyConvertor {
 
 	private double rateUSDtoTSH = 1626.39;
@@ -42,14 +45,25 @@ public class CurrencyConvertor {
 	public static final String CURRENCY_UPDATE_DATE = "UpdateDate";
 	
 	public void setRateUSDtoCODE(Context context,String currencyCode, double rate){
-		conversionRates = context.getSharedPreferences(CURRENCY_RATES, 0);
-		updateDate = context.getSharedPreferences(CURRENCY_UPDATE_DATE, 0);
-		SharedPreferences.Editor rateEditor = conversionRates.edit();
-		rateEditor.putString(currencyCode, Double.toString(rate));
-		rateEditor.commit();
-		SharedPreferences.Editor timeEditor = updateDate.edit();
-		timeEditor.putLong(currencyCode, Calendar.getInstance().getTimeInMillis());
-		timeEditor.commit();
+		/*
+		Save the currency rate to the DB
+		 */
+
+		CurrencyTable currencyTable = new CurrencyTable(context);
+		CurrencyCashFlow currency = new CurrencyCashFlow(context, currencyCode);
+		currency.setCurrencyRate(rate);
+
+		/*
+		Update the currency value to the sqlite DB
+		 */
+		currencyTable.open();
+		boolean isUpdated = currencyTable.updateRateByCurrencyCode(currency);
+		currencyTable.close();
+		if (isUpdated){
+			ConstsDatabase.logINFO("CurrencyConvertor", "setRateUSDtoCODE", "UpdateCurrencyRate");
+		}else {
+			ConstsDatabase.logERROR("setRateUSDtoCODE", "UpdateCurrencyRate");
+		}
 	}
 	
 	public long getDateUpdated(Context context, String currencyCode){
@@ -57,31 +71,20 @@ public class CurrencyConvertor {
 		return updateDate.getLong(currencyCode, 0);
 	}
 	
-	private double getDefaultRatings(String code){
-		double returnRate = 0.0;
-		if (code.equals(EUR_CODE)) {
-			returnRate = rateUSDtoEUR;
-		} else if (code.equals(GBP_CODE)) {
-			returnRate = rateUSDtoGBP;
-		} else if (code.equals(KES_CODE)) {
-			returnRate = rateUSDtoKES;
-		} else if (code.equals(TSH_CODE)) {
-			returnRate = rateUSDtoTSH;
-		} else if (code.equals(UGX_CODE)) {
-			returnRate = rateUSDtoUGX;
-		} else if (code.equals(USD_CODE)) {
-			returnRate = 1.00;
-		} else {
-			returnRate = 1.00;
-		}
-		
-		return returnRate;
-	}
-	
 	public double getSavedCurrencyRates(Context context, String currencyCode){
-		conversionRates = context.getSharedPreferences(CURRENCY_RATES, 0);
-		String rate = Double.toString(getDefaultRatings(currencyCode));
-		return Double.parseDouble(conversionRates.getString(currencyCode, rate));
+		CurrencyTable currencyTable = new CurrencyTable(context);
+		currencyTable.open();
+		CurrencyCashFlow currency = currencyTable.getCurrencyByCode(currencyCode);
+		currencyTable.close();
+		return currency.getRateFromUSD();
+	}
+
+	public CurrencyCashFlow getSavedCurrency(Context context, String currencyCode){
+		CurrencyTable currencyTable = new CurrencyTable(context);
+		currencyTable.open();
+		CurrencyCashFlow currency = currencyTable.getCurrencyByCode(currencyCode);
+		currencyTable.close();
+		return currency;
 	}
 	
 }

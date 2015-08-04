@@ -1,9 +1,10 @@
 package com.example.transactioncard.database;
 
 import com.example.transactioncard.BuildConfig;
+import com.example.transactioncard.R;
 import com.example.transactioncard.object.Accounts;
 import com.example.transactioncard.object.Currencies;
-import com.example.transactioncard.object.Currency;
+import com.example.transactioncard.object.CurrencyCashFlow;
 import com.example.transactioncard.object.Description;
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,6 +12,10 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
 
 public class CashFlowDB extends SQLiteOpenHelper {
 
@@ -64,6 +69,7 @@ public class CashFlowDB extends SQLiteOpenHelper {
 			+" integer primary key autoincrement, "
 			+ConstsDatabase.CURRENCY_CODE + " text not null, "
 			+ConstsDatabase.CURRENCY_NAME + " text, "
+			+ConstsDatabase.CURRENCY_UPDATETIME + " text, "
 			+ConstsDatabase.CURRENCY_FLAG + " text, "
 			+ConstsDatabase.CURRENCY_RATE + " text not null"+
 			");";
@@ -120,50 +126,46 @@ public class CashFlowDB extends SQLiteOpenHelper {
 		
 		try {
 			int nextVersion = oldVersion+1;
-			while (nextVersion <= newVersion){
-				
-			    	switch (nextVersion) {
+			while (nextVersion <= newVersion) {
+
+				switch (nextVersion) {
 					case 2:
 						/*
 						 * Add currency table
 						 */
 						db.execSQL(CREATE_CURRENCY_TABLE);
-						
-						nextVersion = nextVersion +1;
-						break;
-					case 3:
-						/*
-						 * Add default currency
-						 */
-						ContentValues contentValues = new ContentValues();
-						
-						String[] currencyCodes = Currencies.getAllCurrencyCode();
-						String[] currencyNames = Currencies.getDetailedCurrencyList();
-						for (int i = 0; i < currencyCodes.length; i++) {
-							String currencyCode = currencyCodes[i];
-							String currencyName = currencyNames[i];
-							int flagId = Currencies.getCurrecnyFlag(currencyCode);
-							double rate = Currencies.getDefaultRates(currencyCode);
-							
-							Currency currency = new Currency(context, currencyCode);
-							currency.setCurrencyName(currencyName);
-							currency.setFlagId(flagId);
-							currency.setCurrencyRate(rate);
-							
-							setDefaultContentValueCurrency(contentValues, currency);
-							
-							db.insert(ConstsDatabase.CURRENCY_TABLE, null,
-									contentValues);
-							
+
+						double rate = 1.0;
+
+						String[] iso3166Codes = context.getResources().getStringArray(R.array.code_iso3166);
+
+						for (int i = 0; i < iso3166Codes.length; i++) {
+							String iso3166Code = iso3166Codes[i];
+							/*
+							Creating Locale instance
+							 */
+							Locale locale = new Locale(iso3166Code, iso3166Code.toUpperCase());
+							String currencyCode = Currency.getInstance(locale).getCurrencyCode();
+							String countryName = locale.getDisplayCountry();
+							int resourcedId = context.getResources().getIdentifier("drawable/" + iso3166Code, null, context.getPackageName());
+
+							CurrencyCashFlow currencyCashFlow = new CurrencyCashFlow(context, currencyCode);
+							currencyCashFlow.setCurrencyName(countryName);
+							currencyCashFlow.setFlagId(resourcedId);
+							currencyCashFlow.setCurrencyRate(rate);
+
+							ContentValues setCV = setDefaultContentValueCurrency(new ContentValues(), currencyCashFlow);
+
+							long id = db.insert(ConstsDatabase.CURRENCY_TABLE, null,
+									setCV);
+							ConstsDatabase.logINFO(CLASSNAME, methodName, id + " added");
 						}
-						nextVersion = nextVersion +1;
+
 						break;
-						
-					}
-				
+
+				}
+				nextVersion = nextVersion + 1;
 			}
-			
-			
 		    
 		} catch (SQLException e) {
 			// TODO: handle exception
@@ -175,16 +177,21 @@ public class CashFlowDB extends SQLiteOpenHelper {
 		
 	}
 
-	private void setDefaultContentValueCurrency(ContentValues contentValues,
-			Currency currency) {
+	private ContentValues setDefaultContentValueCurrency(ContentValues contentValues,
+			CurrencyCashFlow currencyCashFlow) {
 		contentValues.put(ConstsDatabase.CURRENCY_CODE,
-				currency.getCurrencyCode());
+				currencyCashFlow.getCurrencyCode());
 		contentValues.put(ConstsDatabase.CURRENCY_NAME,
-				currency.getCurrencyName());
-		contentValues.put(ConstsDatabase.CURRENCY_RATE,
-				currency.getRateFromUSD());
+				currencyCashFlow.getCurrencyName());
+		contentValues.put(ConstsDatabase.CURRENCY_UPDATETIME,
+				currencyCashFlow.getUpdateTime());
 		contentValues.put(ConstsDatabase.CURRENCY_FLAG,
-				currency.getFlagId());
+				currencyCashFlow.getFlagId());
+		contentValues.put(ConstsDatabase.CURRENCY_RATE,
+				currencyCashFlow.getRateFromUSD());
+
+
+		return contentValues;
 	}
 
 	

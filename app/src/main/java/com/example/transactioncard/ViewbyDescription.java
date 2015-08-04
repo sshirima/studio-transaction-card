@@ -4,7 +4,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import com.example.transactioncard.HomeActivity.HomeListViewAdapter;
-import com.example.transactioncard.database.CashFlowDB;
 import com.example.transactioncard.database.ConstsDatabase;
 import com.example.transactioncard.database.TransactionTable;
 import com.example.transactioncard.object.CacheDescription;
@@ -78,9 +77,9 @@ public class ViewbyDescription extends Activity{
 	private void calculateTotal() {
 		for (int i = 0; i < transactionList.size(); i++) {
 			if (transactionList.get(i).getCategory().equals(ConstsDatabase.CATEGORY_EXPENSES)){
-				expenseSum += transactionList.get(i).getAmount(getApplicationContext());
+				expenseSum += transactionList.get(i).getAmountInDefaultCurrency(getApplicationContext());
 			} else if (transactionList.get(i).getCategory().equals(ConstsDatabase.CATEGORY_INCOME)){
-				incomeSum += transactionList.get(i).getAmount(getApplicationContext());
+				incomeSum += transactionList.get(i).getAmountInDefaultCurrency(getApplicationContext());
 			}
 		}
 	}

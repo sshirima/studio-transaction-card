@@ -91,9 +91,11 @@ public class Settings extends PreferenceActivity {
 				accountTable.close();
 				accountPrefs.setSummary(defaultAccount.getAccountName());
 
+				Currencies currencies = new Currencies(getActivity());
 				ListPreference currencyList = (ListPreference) findPreference(KEY_CURRENCY);
-				currencyList.setEntries(Currencies.getDetailedCurrencyList());
-				currencyList.setEntryValues(Currencies.getAllCurrencyCode());
+				currencyList.setEntries(currencies.getDetailedCurrencyList());
+				currencyList.setEntryValues(currencies.getAllCurrencyCode());
+
 				currencyList.setSummary(sharedPreferences.getString(
 						KEY_CURRENCY, "TZS"));
 				

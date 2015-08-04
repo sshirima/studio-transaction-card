@@ -12,8 +12,7 @@ public class ConstsDatabase {
 	public static final String TRANSACTION_TABLE = "TransactionTable";
 	public static final String ACCOUNT_TABLE = "AccountTable";
 	public static final String DESCRIPTION_TABLE = "DescriptionTable";
-	public static final String DESCRIPTION_CATEGORY_TABLE = "DescriptionCategoryTable";
-	public static final int DATABASE_VERSION = 3;
+	public static final int DATABASE_VERSION = 10;
 	/*
 	 * Transaction table attributes
 	 */
@@ -86,9 +85,7 @@ public class ConstsDatabase {
 	/*
 	 * SQLite syntax
 	 */
-	public static final String SQLSYNTX_SELECT = " SELECT ";
-	public static final String SQLSYNTX_FROM = " FROM ";
-	public static final String SQLSYNTX_WHERE = " WHERE ";
+
 	public static final String SQLSYNTX_CONDITION_EQUALS = "(%s = ?)";
 	public static final String SQLSYNTX_CONDITION_LESSTHAN = "(%s < ?)";
 	public static final String SQLSYNTX_CONDITION_GREATTHAN = "(%s > ?)";
@@ -97,7 +94,7 @@ public class ConstsDatabase {
 	public static final String SQLSYNTX_QUERY_SELECT_WHERE = "SELECT %s FROM %s WHERE %s";
 	public static final String SQLSYNTX_QUERY_SELECT = "SELECT %s FROM %s";
 	/*
-	 * Currency table
+	 * CurrencyCashFlow table
 	 */
 	public static final String CURRENCY_TABLE = "CurrencyTable";
 	public static final String CURRENCY_ID = "CurrencyId";
@@ -105,6 +102,7 @@ public class ConstsDatabase {
 	public static final String CURRENCY_NAME = "CurrencyName";
 	public static final String CURRENCY_RATE = "CurrencyRate";
 	public static final String CURRENCY_FLAG = "FlagId";
+	public static final String CURRENCY_UPDATETIME = "UpdatedTime";
 	
 	
 }

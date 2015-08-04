@@ -3,6 +3,8 @@ package com.example.transactioncard.database;
 import java.util.ArrayList;
 
 import com.example.transactioncard.object.Accounts;
+import com.example.transactioncard.object.Currencies;
+import com.example.transactioncard.object.Transaction;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -118,11 +120,8 @@ public class AccountTable {
 		/*
 		 * Preparing the query
 		 */
-		String query = "select * from " + ConstsDatabase.VIEW_ACCOUNT_SUMMARY;
 
-		Cursor cursor = null;
-
-		ArrayList<Accounts> accountListView = new ArrayList<Accounts>();
+		ArrayList<Accounts> accountListView ;
 		ArrayList<Accounts> accountListTable = new ArrayList<Accounts>();
 		/*
 		 * Query account in the sqliteDB
@@ -131,112 +130,9 @@ public class AccountTable {
 			// Log INFO
 			ConstsDatabase.logINFO(CLASSNAME, methodName, operation);
 
-			// Query transactions
-			cursor = sqliteDatabase.rawQuery(query, null);
-			accountListView = new ArrayList<Accounts>();
 			/*
-			 * Check if the the accountView is empty Cursor format view form the
-			 * query SELECT * FROM viewAccount Account id | Account name | Sum |
-			 * Category 1 | Personal | 1200 | Expense 1 | Personal | 300 |
-			 * Income 2 | Work | 600 | Expense 2 | Work | 700 | Income
+			Quary all the account from the DB
 			 */
-			if (cursor.moveToFirst()) {
-				while (!cursor.isAfterLast()) {
-					/*
-					 * Get index for each account table field
-					 */
-					int indexId = cursor
-							.getColumnIndex(ConstsDatabase.VIEW_ACCOUNT_ID);
-					int indexName = cursor
-							.getColumnIndex(ConstsDatabase.VIEW_ACCOUNT_NAME);
-					int indexCategory = cursor
-							.getColumnIndex(ConstsDatabase.VIEW_TRANSACTION_CATEGORY);
-					int indexTotal = cursor
-							.getColumnIndex(ConstsDatabase.VIEW_TOTAL);
-					/*
-					 * Get account parameters from the specified field index
-					 */
-					long id = cursor.getLong(indexId);
-					String name = cursor.getString(indexName);
-					String category = cursor.getString(indexCategory);
-					double total = cursor.getDouble(indexTotal);
-					/*
-					 * Move to the next row of the cursor
-					 */
-					cursor.moveToNext();
-
-					if (!cursor.isAfterLast()) {
-						/*
-						 * Get id and category of the next row
-						 */
-						long id1 = cursor.getLong(indexId);
-						String category1 = cursor.getString(indexCategory);
-						/*
-						 * Compare the id and category between two rows
-						 */
-						if (id == id1 & !category.equals(category1)) {
-							/*
-							 * Two consecutive rows have the same account id,
-							 * but different categories
-							 */
-							double total1 = cursor.getDouble(indexTotal);
-							/*
-							 * Create new account instance, and fills in the
-							 * parameters
-							 */
-							Accounts account = new Accounts(context, name);
-							account.setId(id);
-							if (category
-									.equals(ConstsDatabase.CATEGORY_EXPENSES)) {
-								account.setExpenditure(total);
-								account.setIncome(total1);
-							} else {
-								account.setExpenditure(total1);
-								account.setIncome(total);
-							}
-
-							accountListView.add(account);
-						} else {
-							/*
-							 * Two consecutive rows has different account id,
-							 * create instance of the previous row, and fill in
-							 * the parameters
-							 */
-							Accounts account = new Accounts(context, name);
-							account.setId(id);
-							if (category
-									.equals(ConstsDatabase.CATEGORY_EXPENSES)) {
-								account.setExpenditure(total);
-							} else if (category
-									.equals(ConstsDatabase.CATEGORY_INCOME)) {
-								account.setIncome(total);
-							}
-							accountListView.add(account);
-							cursor.moveToPrevious();
-						}
-					} else if (cursor.isAfterLast()) {
-						/*
-						 * Last row account details which is different from the
-						 * previous
-						 */
-						Accounts account = new Accounts(context, name);
-						account.setId(id);
-						if (category.equals(ConstsDatabase.CATEGORY_EXPENSES)) {
-							account.setExpenditure(total);
-						} else if (category
-								.equals(ConstsDatabase.CATEGORY_INCOME)) {
-							account.setIncome(total);
-						}
-						accountListView.add(account);
-					}
-					cursor.moveToNext();
-				}
-
-			}
-			/*
-			 * Query for all account in the table
-			 */
-
 			String accId = ConstsDatabase.ACCOUNT_ID;
 			String accName = ConstsDatabase.ACCOUNT_NAME;
 			String expense = ConstsDatabase.ACCOUNT_EXPENDITURE;
@@ -251,28 +147,75 @@ public class AccountTable {
 					cursor1.moveToNext();
 				}
 			}
+			cursor1.close();
 			/*
-			 * WORK AROUND to get all the accounts
+			Iterate through the account and find the sum for each account
 			 */
-
 			for (int i = 0; i < accountListTable.size(); i++) {
-				long iID = accountListTable.get(i).getId();
-				for (int j = 0; j < accountListView.size(); j++) {
-					long jID = accountListView.get(j).getId();
-					if (iID == jID) {
-						accountListTable.remove(i);
-						accountListTable.add(i, accountListView.get(j));
-						break;
+				long id = accountListTable.get(i).getId();
+				/*
+				Query transactiontable for all transaction with the given ID
+				 */
+				String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.TRANSACTION_ACCOUNT);
+				String[] conditionArgs = new String[]{""+id};
+
+				Cursor cursor2 = sqliteDatabase.query(ConstsDatabase.TRANSACTION_TABLE,
+						null,condition,conditionArgs,null,null,null);
+
+
+				ArrayList<Transaction> list = new ArrayList<Transaction>();
+				if (cursor2.moveToFirst()){
+					while (!cursor2.isAfterLast()) {
+						int amountIndex = cursor2
+								.getColumnIndex(ConstsDatabase.TRANSACTION_AMOUNT);
+						int timeIndex = cursor2.getColumnIndex(ConstsDatabase.TRANSACTION_TIME);
+						int categoryIndex = cursor2
+								.getColumnIndex(ConstsDatabase.TRANSACTION_CATEGORY);
+						int currencyCodeIndex = cursor2.getColumnIndex(ConstsDatabase.TRANSACTION_CURRENCY);
+						String currencyCode = cursor2.getString(currencyCodeIndex);
+						if (currencyCode == null){
+							currencyCode = Currencies.CURRENCY_CODE_US;
+						}
+						Transaction transaction = new Transaction(context, cursor2.getDouble(amountIndex),
+								cursor2.getLong(timeIndex), currencyCode);
+
+						transaction.setCategory(cursor2.getString(categoryIndex));
+
+						list.add(transaction);
+						cursor2.moveToNext();
 					}
 				}
+
+				/*
+				Calculate sum base on category
+				 */
+				double expenseSum = 0;
+				double incomeSum = 0;
+				/*
+
+				 */
+				if (list.size() > 0){
+
+					for (int j = 0; j < list.size(); j++) {
+						if (list.get(j).getCategory().equals(ConstsDatabase.CATEGORY_EXPENSES)){
+							expenseSum += list.get(j).getAmountInDefaultCurrency(context);
+						}else if(list.get(j).getCategory().equals(ConstsDatabase.CATEGORY_INCOME)) {
+							incomeSum += list.get(j).getAmountInDefaultCurrency(context);
+						}
+					}
+				}
+
+				accountListTable.get(i).setExpenditure(expenseSum);
+				accountListTable.get(i).setIncome(incomeSum);
+				cursor2.close();
 			}
+
+
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		cursor.close();
 		return accountListTable;
 	}
 

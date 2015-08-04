@@ -82,7 +82,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		/*
 		 * Get transaction values
 		 */
-		int amount = (int)Math.round(transaction.getAmount(context));
+		int amount = (int)Math.round(transaction.getAmountInDefaultCurrency(context));
 		String currency = Settings.getDefaultCurrency(context);
 		int imageId = transaction.getImageId();
 		String date = transaction.getDate();
@@ -186,9 +186,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 			boolean isExpenses = list.get(i).getCategory()
 					.equals(HomeActivity.CATEGORY_LIST[1]);
 			if (isExpenses) {
-				expense = expense + list.get(i).getAmount(context);
+				expense = expense + list.get(i).getAmountInDefaultCurrency(context);
 			} else {
-				income = income + list.get(i).getAmount(context);
+				income = income + list.get(i).getAmountInDefaultCurrency(context);
 			}
 		}
 		return expenses ? expense : income;

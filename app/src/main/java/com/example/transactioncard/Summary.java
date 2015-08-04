@@ -187,13 +187,13 @@ public class Summary extends Activity implements OnCheckedChangeListener,
 			expenseData[i] = new GraphViewData(getValueX(
 					start.getTimeInMillis(), expenseList.get(i - 1)
 							.getTimeInMillis()), expenseList.get(i - 1)
-					.getAmount(getApplicationContext()));
+					.getAmountInDefaultCurrency(getApplicationContext()));
 		}
 		for (int i = 1; i <= iSize; i++) {
 			incomeData[i] = new GraphViewData(getValueX(
 					start.getTimeInMillis(), incomeList.get(i - 1)
 							.getTimeInMillis()), incomeList.get(i - 1)
-					.getAmount(getApplicationContext()));
+					.getAmountInDefaultCurrency(getApplicationContext()));
 		}
 		graphView = new LineGraphView(getApplicationContext(), "Graph");
 		// styling the plot
@@ -416,13 +416,13 @@ public class Summary extends Activity implements OnCheckedChangeListener,
 			expenseData[i] = new GraphViewData(getValueX(
 					start.getTimeInMillis(), expenseList.get(i - 1)
 							.getTimeInMillis()), expenseList.get(i - 1)
-					.getAmount(getApplicationContext()));
+					.getAmountInDefaultCurrency(getApplicationContext()));
 		}
 		for (int i = 1; i <= iSize; i++) {
 			incomeData[i] = new GraphViewData(getValueX(
 					start.getTimeInMillis(), incomeList.get(i - 1)
 							.getTimeInMillis()), incomeList.get(i - 1)
-					.getAmount(getApplicationContext()));
+					.getAmountInDefaultCurrency(getApplicationContext()));
 		}
 		if (cbExpenses.isChecked() && cbIncome.isChecked()) {
 			expenseGraphViewSeries.resetData(expenseData);
@@ -449,7 +449,7 @@ public class Summary extends Activity implements OnCheckedChangeListener,
 	private double getMaxCount(ArrayList<Transaction> mList) {
 		ArrayList<Double> mNumbers = new ArrayList<Double>();
 		for (int i = 0; i < mList.size(); i++) {
-			mNumbers.add(mList.get(i).getAmount(getApplicationContext()));
+			mNumbers.add(mList.get(i).getAmountInDefaultCurrency(getApplicationContext()));
 		}
 		return mList.size() == 0 ? 1000.00 : Collections.max(mNumbers);
 	}

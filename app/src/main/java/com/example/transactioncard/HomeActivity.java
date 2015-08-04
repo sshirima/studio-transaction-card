@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Currency;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -573,7 +574,8 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		 * Get condition set
 		 */
 		String categoryChoice = getCategoryChoice();
-		String accountIdChoice = ""+Settings.getDefaultAccount(getApplicationContext()).getId();
+		Accounts acc = Settings.getDefaultAccount(getApplicationContext());
+		String accountIdChoice = ""+acc.getId();
 		String startTimeChoice = ""+start.getTimeInMillis();
 		String endTimeChoice = ""+end.getTimeInMillis();
 		/*
@@ -817,17 +819,17 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 				/*
 				 * Fetch the transaction parameters
 				 */
-				int amount = (int)Math.round(transaction.getAmount(applicationContext));
+				int amount = (int)Math.round(transaction.getAmountInDefaultCurrency(applicationContext));
 				String date = transaction.getDate();
 				String time = transaction.getTime();
-				String currency = " "+ Settings.getDefaultCurrency(applicationContext);
+				String currency = ""+ Settings.getDefaultCurrency(applicationContext);
 				String description = transaction.getDescriptionName();
 				int displayIconResId = transaction.getImageId();
 				/*
 				 * Set the transaction value to listView display
 				 */
 				holder.tvAmount.setText(""+new DecimalFormat().format(amount));
-				holder.tvCurrency.setText(currency);
+				holder.tvCurrency.setText(Currency.getInstance(currency).getSymbol());
 				holder.tvDate.setText(date + Consts.STRTXT_ON + time);
 				holder.tvDes.setText(description);
 				holder.ivCategory.setImageResource(displayIconResId);
@@ -896,7 +898,7 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 			double sum = 0;
 			for (int i = 0; i < list.size(); i++) {
 				if (list.get(i).getCategory().equals(category)) {
-					sum = sum + list.get(i).getAmount(context);
+					sum = sum + list.get(i).getAmountInDefaultCurrency(context);
 				}
 			}
 			return sum;

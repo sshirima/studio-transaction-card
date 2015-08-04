@@ -114,7 +114,8 @@ public class DialogTransactionNew extends DialogFragment implements OnClickListe
 	}
 	
 	private Transaction createNewTransaction() {
-		String defaultCurrency = Settings.getDefaultCurrency(getActivity());
+		String defaultCurrency = (String) spNewTransactionCurrenncy
+				.getSelectedItem();
 		Transaction transaction = new Transaction(getActivity(),
 				transactionAmount, transactionTimeInMillis, defaultCurrency);
 		
@@ -131,7 +132,7 @@ public class DialogTransactionNew extends DialogFragment implements OnClickListe
 				R.array.currency_list);
 		ArrayList<String> arrayList = new ArrayList<String>(
 				Arrays.asList(currencyList));
-		String defaultCurrency = Transaction.getDefaultCurrency(getActivity());
+		String defaultCurrency = Settings.getDefaultCurrency(getActivity());
 		spinner.setSelection(arrayList.indexOf(defaultCurrency));
 	}
 
@@ -310,15 +311,28 @@ public class DialogTransactionNew extends DialogFragment implements OnClickListe
 					.toString().equals(""));
 			if (amountNotEmpty && descriptionNotEmpty) {
 				Transaction transaction = createNewTransaction();
+				/*
+				Get transactions amount from the input field
+				 */
 				double amount = Double.parseDouble(etNewTransactionAmount
 						.getText().toString());
+				/*
+				Get transactions from user input field
+				 */
 				String defaultCurrency = (String) spNewTransactionCurrenncy
 						.getSelectedItem();
-				transaction.setTransactionAmount(amount, defaultCurrency);
+				/*
+				Set transaction description from user input field
+				 */
 				String description = actvNewTransactionDesc.getText()
 						.toString();
+				/*
+				Assign user input values to the new transaction instances
+				 */
+				transaction.setTransactionAmount(amount, defaultCurrency);
 				transaction.setDescription(cacheDescription
 						.getDescription(description));
+
 				dialogListerner.onDialogPositiveClick(DialogTransactionNew.this,
 						transaction);
 			} else {

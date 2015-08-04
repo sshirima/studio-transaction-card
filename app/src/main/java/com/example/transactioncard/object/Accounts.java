@@ -37,28 +37,16 @@ public class Accounts {
 		this.expenditure = expenditure;
 	}
 	
-	public double getExpenses(Context context){
-		String currencyCode = Currencies.getDefaultCurrency(context);
-		CurrencyConvertor convertor = new CurrencyConvertor();
-		double returnAmount = convertor.convertUSDtoCODE(context, currencyCode,
-				this.expenditure);
-		return Math.round(returnAmount);
+	public double getExpenses(){
+		return this.expenditure;
 	}
 	
-	public double getIncome(Context context){
-		String currencyCode = Currencies.getDefaultCurrency(context);
-		CurrencyConvertor convertor = new CurrencyConvertor();
-		double returnAmount = convertor.convertUSDtoCODE(context, currencyCode,
-				this.income);
-		return Math.round(returnAmount);
+	public double getIncome(){
+		return this.income;
 	}
 	
-	public double getBalance(Context context){
-		String currencyCode = Currencies.getDefaultCurrency(context);
-		CurrencyConvertor convertor = new CurrencyConvertor();
-		double returnAmount = convertor.convertUSDtoCODE(context, currencyCode,
-				this.income - this.expenditure);
-		return Math.round(returnAmount);
+	public double getBalance(){
+		return this.income - this.expenditure;
 	}
 	
 	public String getAccountName(){

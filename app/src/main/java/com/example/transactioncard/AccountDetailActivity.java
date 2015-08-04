@@ -81,9 +81,9 @@ public class AccountDetailActivity extends Activity{
 	private void calculateTotal() {
 		for (int i = 0; i < transactionList.size(); i++) {
 			if (transactionList.get(i).getCategory().equals(ConstsDatabase.CATEGORY_EXPENSES)){
-				expenseSum += transactionList.get(i).getAmount(getApplicationContext());
+				expenseSum += transactionList.get(i).getAmountInDefaultCurrency(getApplicationContext());
 			} else if (transactionList.get(i).getCategory().equals(ConstsDatabase.CATEGORY_INCOME)){
-				incomeSum += transactionList.get(i).getAmount(getApplicationContext());
+				incomeSum += transactionList.get(i).getAmountInDefaultCurrency(getApplicationContext());
 			}
 		}
 	}

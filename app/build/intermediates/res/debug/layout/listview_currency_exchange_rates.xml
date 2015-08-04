@@ -2,15 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp" >
+    android:padding="5dp">
+
+
 
     <ImageView
-            android:contentDescription="@string/flag"
-            android:id="@+id/ivCurrencyFlag"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/ic_usa" />
+        android:contentDescription="@string/flag"
+        android:id="@+id/ivCurrencyFlag"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_usa" />
 
     <TextView
         android:id="@+id/tvCurrencyExchangeDetails"
@@ -33,18 +35,6 @@
         android:text="TSH"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-    <TextView
-        android:id="@+id/tvCurrencyUpdateLabel"
-         android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tvCurrencyUpdate"
-        android:layout_below="@+id/tvCurrencyCodes"
-        android:layout_marginTop="5dp"
-        android:layout_alignParentRight="true"
-        android:text="Updated on:"
-       android:textSize="10dp"
-        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/tvCurrencyUpdate"

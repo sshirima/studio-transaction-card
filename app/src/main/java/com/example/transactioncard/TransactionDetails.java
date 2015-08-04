@@ -103,7 +103,7 @@ public class TransactionDetails extends Activity implements DateSetListener,
 
 	private void updateUserInterface(Transaction transaction) {
 		// TODO Auto-generated method stub
-		String amount = Double.toString(transaction.getAmount(getApplicationContext()));
+		String amount = Double.toString(transaction.getAmountInDefaultCurrency(getApplicationContext()));
 		String accountName = transaction.getAccountName();
 		String category = transaction.getCategory();
 		String details = transaction.getDescriptionName();
@@ -362,7 +362,7 @@ public class TransactionDetails extends Activity implements DateSetListener,
 	private void setAmountEdited() {
 		Double amount = Double.parseDouble(etTransactionDetailsAmount.getText()
 				.toString());
-		String currencyCode = Currencies.getDefaultCurrency(getApplicationContext());
+		String currencyCode = Settings.getDefaultCurrency(getApplicationContext());
 		editedTransaction.setTransactionAmount(amount, currencyCode);
 	}
 

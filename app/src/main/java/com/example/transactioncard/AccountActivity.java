@@ -480,14 +480,12 @@ public class AccountActivity extends Activity implements
 			 */
 			Accounts account = (Accounts) accountsList.get(position);
 			String currency = Settings.getDefaultCurrency(context);
-			double balance = account.getIncome(context)
-					- account.getExpenses(context);
 			/*
 			 * Set the account information
 			 */
-			String balanceFormated = getFormateStringFromDouble((int)Math.round(balance));
-			String expenseFormated = getFormateStringFromDouble((int)Math.round(account.getExpenses(context)));
-			String incomeFormated = getFormateStringFromDouble((int)Math.round(account.getIncome(context)));
+			String balanceFormated = getFormateStringFromDouble((int)Math.round(account.getBalance()));
+			String expenseFormated = getFormateStringFromDouble((int)Math.round(account.getExpenses()));
+			String incomeFormated = getFormateStringFromDouble((int)Math.round(account.getIncome()));
 			
 			holder.tvName.setText(account.getAccountName());
 			holder.tvBalance.setText(String.format(STRTXTV_BALANCE, balanceFormated, currency));

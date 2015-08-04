@@ -2,6 +2,7 @@ package com.example.transactioncard;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
@@ -16,6 +17,7 @@ import transactioncard.currency.XmlYahooConsts;
 import transactioncard.currency.YahooCurrencyConvertor;
 
 import com.example.transactioncard.object.Currencies;
+import com.example.transactioncard.object.CurrencyCashFlow;
 import com.example.transactioncard.object.CurrencyConvertor;
 
 import android.app.Activity;
@@ -40,20 +42,18 @@ import android.widget.Toast;
 
 public class CurrencyActivity extends Activity implements
 		OnItemSelectedListener {
-
-	private String[] CURRENCY_LIST = { Currencies.CURRENCY_CODE_TANZANIA,
-			Currencies.CURRENCY_CODE_UGANDA, Currencies.CURRENCY_CODE_KENYA,
-			Currencies.CURRENCY_CODE_POUND, Currencies.CURRENCY_CODE_EURO };
 	/*
 	 * View component variable
 	 */
 	private ListView lvCurrencyExchange;
 	private ListViewAdapter adapter;
-
+	Currencies currencies;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		currencies = new Currencies(getApplicationContext());
+
 		setContentView(R.layout.activity_currency_exhange);
 		LoadRate load = new LoadRate();
 		load.execute(new String[] { null });
@@ -88,7 +88,7 @@ public class CurrencyActivity extends Activity implements
 			try {
 
 				result = yahooCurrencyConvertor.getCurrencyRates(
-						Currencies.CURRENCY_CODE_US, CURRENCY_LIST);
+						Currencies.CURRENCY_CODE_US, currencies.getAllCurrencyCode());
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -201,13 +201,13 @@ public class CurrencyActivity extends Activity implements
 				currencyConvertor.setRateUSDtoCODE(getApplicationContext(),
 						currencyCode, Double.parseDouble(rate));
 				
-				System.out.println("Rate id: " + rateId);
+				/*System.out.println("Rate id: " + rateId);
 				System.out.println("Name: " + name);
 				System.out.println("Rate: " + rate);
 				System.out.println("Date: " + date);
 				System.out.println("Time: " + time);
 				System.out.println("Ask: " + ask);
-				System.out.println("Bid: " + bid);
+				System.out.println("Bid: " + bid);*/
 				
 			} else {
 				throw new NullPointerException();
@@ -218,7 +218,8 @@ public class CurrencyActivity extends Activity implements
     }
 
 	public String[] getCurrenciesWithDetails() {
-		return Currencies.getDetailedCurrencyList();
+
+		return currencies.getDetailedCurrencyList();
 	}
 
 	private void initializesComponentVariables() {
@@ -287,7 +288,7 @@ public class CurrencyActivity extends Activity implements
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return Currencies.getAllCurrencyCode().length;
+			return currencies.getAllCurrencyCode().length;
 		}
 
 		@Override
@@ -331,20 +332,21 @@ public class CurrencyActivity extends Activity implements
 			/*
 			 * Get currency codes
 			 */
-			String currencyCode = Currencies.getAllCurrencyCode()[position];
+			String currencyCode = currencies.getAllCurrencyCode()[position];
 			CurrencyConvertor currencyConvertor = new CurrencyConvertor();
-			double converted = currencyConvertor.getSavedCurrencyRates(
+
+			CurrencyCashFlow currencyCashFlow = currencyConvertor.getSavedCurrency(
 					getApplicationContext(), currencyCode);
-			String conversionExpression = "1 (USD) = " + converted + "("
-					+ currencyCode + ")";
+
+			String conversionExpression = "1 USD = " + currencyCashFlow.getRateFromUSD()
+					+ " "+Currency.getInstance(currencyCode).getSymbol();
 			viewHolder.tvExchangeDetails.setText(conversionExpression);
 			viewHolder.tvCurrencyCodes
 					.setText(getCurrenciesWithDetails()[position]);
-			viewHolder.ivFlag.setImageResource(Currencies
-					.getCurrecnyFlag(currencyCode));
-			long updatedTime = currencyConvertor.getDateUpdated(
-					getApplicationContext(), currencyCode);
-			;
+			viewHolder.ivFlag.setImageResource(currencies
+					.getCurrencyFlag(currencyCode));
+			long updatedTime = currencyCashFlow.getUpdateTime();
+
 			if (!(updatedTime == 0)) {
 				viewHolder.tvUpdateDetails.setTextColor(Color.BLUE);
 				viewHolder.tvUpdateDetails.setText(getFormatedDate(context,

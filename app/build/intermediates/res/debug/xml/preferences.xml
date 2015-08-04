@@ -17,7 +17,7 @@
         android:summary="@string/prefs_account_sum"
         android:title="@string/default_account_title" />
     <ListPreference
-        android:key="currency"
+        android:key="currencyCashFlow"
         android:summary="@string/prefs_currency_sum"
         android:title="@string/currency_title" />
 </PreferenceScreen><!-- From: file:/home/samson/android-development-studio/app/src/main/res/xml/preferences.xml -->

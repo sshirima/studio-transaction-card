@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import com.example.transactioncard.BuildConfig;
+import com.example.transactioncard.Consts;
 import com.example.transactioncard.object.Currencies;
 import com.example.transactioncard.object.Description;
 import com.example.transactioncard.object.Transaction;
@@ -292,7 +293,7 @@ public class TransactionTable {
 			 * Put transaction parameters to the ContentValues instance
 			 */
 			contentValues.put(ConstsDatabase.TRANSACTION_AMOUNT,
-					transaction.getAmountInUSD());
+					transaction.getAmount());
 			contentValues.put(ConstsDatabase.TRANSACTION_TIME,
 					transaction.getTimeInMillis());
 			contentValues.put(ConstsDatabase.TRANSACTION_DESCRIPTION,
@@ -308,7 +309,7 @@ public class TransactionTable {
 		return contentValues;
 	}
 
-	private Transaction cursorToTransaction(Cursor cursor) {
+	public Transaction cursorToTransaction(Cursor cursor) {
 		// TODO Auto-generated method stub
 		String methodName = "cursorToTransaction";
 		String operation = "Convert cursor to transaction object";
@@ -321,7 +322,8 @@ public class TransactionTable {
 		int amountIndex = cursor
 				.getColumnIndex(ConstsDatabase.TRANSACTION_AMOUNT);
 		int timeIndex = cursor.getColumnIndex(ConstsDatabase.TRANSACTION_TIME);
-		int desIndex = cursor.getColumnIndex(ConstsDatabase.DESCRIPTION_NAME);
+		int desNameIndex = cursor.getColumnIndex(ConstsDatabase.DESCRIPTION_NAME);
+		int desIdIndex = cursor.getColumnIndex(ConstsDatabase.DESCRIPTION_ID);
 		int accountNameIndex = cursor
 				.getColumnIndex(ConstsDatabase.ACCOUNT_NAME);
 		int categoryIndex = cursor
@@ -332,25 +334,29 @@ public class TransactionTable {
 		/*
 		 * Extract transaction parameters by the given Index
 		 */
-		String defaultCurrency = Currencies.CURRENCY_CODE_US;
+		String currency = cursor.getString(currencyCodeIndex);
+		if (currency == null){
+			currency = Currencies.CURRENCY_CODE_US;
+		}
 		final long transactionTimeMillis = cursor.getLong(timeIndex);
 		Transaction transaction = new Transaction(context, transactionAmount,
-				transactionTimeMillis, defaultCurrency);
+				transactionTimeMillis, currency);
 		// Set transaction ID
 		transaction.setTransactionId(cursor.getInt(idIndex));
 		
 		// Query description by name from the sqliteDB as set
-		String descriptionName = cursor.getString(desIndex);
-		Description description = getDescriptionByName(descriptionName);
+
+		Description description = new Description();
+		description.setId(cursor.getLong(desIdIndex));
+		description.setDescription(cursor.getString(desNameIndex));
 		transaction.setDescription(description);
 		
-		// Set account 
+		// Set account
 		transaction.setAccountName(cursor.getString(accountNameIndex));
 		transaction.setAccountId(cursor.getInt(accIdIndex));
 		//Set category
 		transaction.setCategory(cursor.getString(categoryIndex));
 		//Set currency code
-		transaction.setCurrencyCode(cursor.getString(currencyCodeIndex));
 		
 		return transaction;
 	}

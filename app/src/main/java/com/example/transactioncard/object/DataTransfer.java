@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import com.example.transactioncard.ImportAndExport;
+import com.example.transactioncard.Settings;
 import com.example.transactioncard.database.TransactionTable;
 import android.content.Context;
 import android.os.Environment;
@@ -46,7 +47,7 @@ public class DataTransfer {
 			int listSize = transactionList.size();
 			csvHeader += "\"" + "Id" + "\",";
 			csvHeader += "\"" + "Amount" + "\",";
-			csvHeader += "\"" + "Currency" + "\",";
+			csvHeader += "\"" + "CurrencyCashFlow" + "\",";
 			csvHeader += "\"" + "Description" + "\",";
 			csvHeader += "\"" + "Account name" + "\",";
 			csvHeader += "\"" + "Category" + "\",";
@@ -59,8 +60,8 @@ public class DataTransfer {
 				for (int i = 0; i < listSize; i++) {
 					Transaction transaction = transactionList.get(i);
 					String id = Long.toString(transaction.getTransactionId());
-					String amount = Double.toString(transaction.getAmount(context));
-					String currency = transaction.getDefaultCurrency(context);
+					String amount = Double.toString(transaction.getAmountInDefaultCurrency(context));
+					String currency = Settings.getDefaultCurrency(context);
 					String description = transaction.getDescriptionName();
 					String accountName = transaction.getAccountName();
 					String category = transaction.getCategory();

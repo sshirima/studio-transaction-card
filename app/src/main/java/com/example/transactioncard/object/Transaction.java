@@ -8,6 +8,7 @@ import java.util.Locale;
 import android.content.Context;
 
 import com.example.transactioncard.R;
+import com.example.transactioncard.Settings;
 
 public class Transaction {
 	private long transactionId;
@@ -21,40 +22,51 @@ public class Transaction {
 	public static final String EXPENSES = "Expenses";
 	public static final String INCOME = "Income";
 	private String currencyCode = Currencies.CURRENCY_CODE_US;
-
+	Currencies currencies;
 	public Transaction() {
 
 	}
 
 	public Transaction(Context context, double transactionAmount, long timeInMillis,
 			String currencyCode) {
-		CurrencyConvertor currencyConvertor = new CurrencyConvertor();
-		this.transactionAmount = currencyConvertor.convertCODEtoUSD(context,
-				currencyCode, transactionAmount);
+		this.transactionAmount = transactionAmount;
+		this.currencyCode = currencyCode;
 		this.timeInMillis = timeInMillis;
 		this.context = context;
+		currencies = new Currencies(context);
 	}
 
-	public double getAmount(Context context) {
-		String currencyCode = Currencies.getDefaultCurrency(context);
-		CurrencyConvertor convertor = new CurrencyConvertor();
-		double returnAmount = convertor.convertUSDtoCODE(context, currencyCode,
-				this.transactionAmount);
-		return Math.round(returnAmount);
+	public double getAmount(){
+		return this.transactionAmount;
+	}
+
+	public double getAmountInDefaultCurrency(Context context) {
+		String currencyCode = Settings.getDefaultCurrency(context);
+		CurrencyConvertor currencyConvertor = new CurrencyConvertor();
+
+		double amountInDefaultCurrency = 0.0;
+
+		if (currencyCode.equals(this.currencyCode)){
+			amountInDefaultCurrency = this.transactionAmount;
+		}else {
+			double amountInUSD = currencyConvertor.convertCODEtoUSD(context,
+					this.currencyCode, this.transactionAmount);
+			amountInDefaultCurrency = currencyConvertor.convertUSDtoCODE(context, currencyCode,
+					amountInUSD);
+		}
+
+
+		return amountInDefaultCurrency;
 	}
 
 	
 	
 	public String getCurrencyCode() {
-		return currencyCode;
+		return this.currencyCode;
 	}
 
 	public void setCurrencyCode(String currencyCode) {
 		this.currencyCode = currencyCode;
-	}
-
-	public double getAmountInUSD() {
-		return this.transactionAmount;
 	}
 
 	public String getCategory() {
@@ -79,10 +91,6 @@ public class Transaction {
 
 	public long getTimeInMillis() {
 		return timeInMillis;
-	}
-
-	public static String getDefaultCurrency(Context context) {
-		return Currencies.getDefaultCurrency(context);
 	}
 
 	public int getImageId() {
@@ -128,9 +136,8 @@ public class Transaction {
 
 	public void setTransactionAmount(double transactionAmount,
 			String currencyCode) {
-		CurrencyConvertor currencyConvertor = new CurrencyConvertor();
-		this.transactionAmount = currencyConvertor.convertCODEtoUSD(context,
-				currencyCode, transactionAmount);
+		this.transactionAmount = transactionAmount;
+		this.currencyCode = currencyCode;
 	}
 
 	public void setTime(long timeInMillis) {
