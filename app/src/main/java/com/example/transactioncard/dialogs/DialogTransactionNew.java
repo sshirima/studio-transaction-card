@@ -11,7 +11,6 @@ import com.example.transactioncard.database.AccountTable;
 import com.example.transactioncard.database.ConstsDatabase;
 import com.example.transactioncard.object.Accounts;
 import com.example.transactioncard.object.CacheDescription;
-import com.example.transactioncard.object.Currencies;
 import com.example.transactioncard.object.Description;
 import com.example.transactioncard.object.Transaction;
 import android.app.Activity;
@@ -176,7 +175,7 @@ public class DialogTransactionNew extends DialogFragment implements OnClickListe
 	private ArrayList<Accounts> getAccountList() {
 		AccountTable accountTable = new AccountTable(getActivity());
 		accountTable.open();
-		ArrayList<Accounts> accountList = accountTable.getAccountAll();
+		ArrayList<Accounts> accountList = accountTable.getAccountAllBasic();
 		accountTable.close();
 		return accountList;
 	}
@@ -382,4 +381,5 @@ public class DialogTransactionNew extends DialogFragment implements OnClickListe
 		// TODO Auto-generated method stub
 
 	}
+
 }

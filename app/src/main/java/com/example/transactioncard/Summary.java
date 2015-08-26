@@ -96,24 +96,19 @@ public class Summary extends Activity implements OnCheckedChangeListener,
 		titles.add("Year");
 		itemList = new HashMap<String, List<Transaction>>();
 		// adding items
-		List<Transaction> today = new ArrayList<Transaction>();
-		today = getCustomList(this, getStartTime(VALUE_TODAY),
+		List<Transaction> today =  getCustomList(this, getStartTime(VALUE_TODAY),
 				getEndTime(VALUE_TODAY));
 
-		List<Transaction> yesterday = new ArrayList<Transaction>();
-		yesterday = getCustomList(this, getStartTime(VALUE_YESTERDAY),
+		List<Transaction> yesterday = getCustomList(this, getStartTime(VALUE_YESTERDAY),
 				getEndTime(VALUE_YESTERDAY));
 
-		List<Transaction> week = new ArrayList<Transaction>();
-		week = getCustomList(this, getStartTime(VALUE_WEEK),
+		List<Transaction> week =  getCustomList(this, getStartTime(VALUE_WEEK),
 				getEndTime(VALUE_WEEK));
 
-		List<Transaction> month = new ArrayList<Transaction>();
-		month = getCustomList(this, getStartTime(VALUE_MONTH),
+		List<Transaction> month = getCustomList(this, getStartTime(VALUE_MONTH),
 				getEndTime(VALUE_MONTH));
 
-		List<Transaction> year = new ArrayList<Transaction>();
-		year = getCustomList(this, getStartTime(VALUE_YEAR),
+		List<Transaction> year =  getCustomList(this, getStartTime(VALUE_YEAR),
 				getEndTime(VALUE_YEAR));
 
 		// adding items to the hashmap

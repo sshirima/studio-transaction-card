@@ -31,7 +31,7 @@ public class DialogSingleChoice extends DialogFragment{
 	
 	private DialogFragment dialogFragment;
 	private ArrayList<Accounts> accountList = new ArrayList<Accounts>();
-	public void setAccountList(DialogFragment dialogFragment, ArrayList<Accounts> accountsList){	
+	public void setAccountList(DialogFragment dialogFragment, ArrayList<Accounts> accountsList){
 		this.accountList = accountsList;
 		this.dialogFragment = dialogFragment;
 		ArrayList<String> accountNameList = new ArrayList<String>();

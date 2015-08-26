@@ -22,7 +22,6 @@ public class Transaction {
 	public static final String EXPENSES = "Expenses";
 	public static final String INCOME = "Income";
 	private String currencyCode = Currencies.CURRENCY_CODE_US;
-	Currencies currencies;
 	public Transaction() {
 
 	}
@@ -33,7 +32,6 @@ public class Transaction {
 		this.currencyCode = currencyCode;
 		this.timeInMillis = timeInMillis;
 		this.context = context;
-		currencies = new Currencies(context);
 	}
 
 	public double getAmount(){
@@ -44,7 +42,7 @@ public class Transaction {
 		String currencyCode = Settings.getDefaultCurrency(context);
 		CurrencyConvertor currencyConvertor = new CurrencyConvertor();
 
-		double amountInDefaultCurrency = 0.0;
+		double amountInDefaultCurrency;
 
 		if (currencyCode.equals(this.currencyCode)){
 			amountInDefaultCurrency = this.transactionAmount;

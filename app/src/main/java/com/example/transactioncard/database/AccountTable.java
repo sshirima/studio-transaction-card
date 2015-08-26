@@ -113,6 +113,43 @@ public class AccountTable {
 		return returnAccounts;
 	}
 
+	public ArrayList<Accounts> getAccountAllBasic(){
+		String methodName = "";
+		String operation = "Get all account names from database";
+		ArrayList<Accounts> accountList = null;
+
+		String tableName = ConstsDatabase.ACCOUNT_TABLE;
+		String returnColumn = ConstsDatabase.ACCOUNT_ID + ", " +ConstsDatabase.ACCOUNT_NAME;
+		String query = String.format(ConstsDatabase.SQLSYNTX_QUERY_SELECT, returnColumn, tableName);
+
+		ConstsDatabase.logINFO(CLASSNAME, methodName,operation);
+
+		try{
+			Cursor cursor = sqliteDatabase.rawQuery(query,null);
+
+			if (cursor.moveToFirst()){
+				int nameIndex = cursor
+						.getColumnIndex(ConstsDatabase.ACCOUNT_NAME);
+				int idIndex = cursor
+						.getColumnIndex(ConstsDatabase.ACCOUNT_ID);
+				accountList = new ArrayList<Accounts>();
+
+				while (!cursor.isAfterLast()) {
+					Accounts accounts = new Accounts(cursor.getLong(idIndex), cursor.getString(nameIndex));
+					accountList.add(accounts);
+					cursor.moveToNext();
+				}
+
+
+			}
+		}catch (Exception ex){
+			ConstsDatabase.logERROR(methodName,operation);
+			ex.printStackTrace();
+		}
+
+		return accountList;
+	}
+
 	public ArrayList<Accounts> getAccountAll() {
 		String methodName = "getAccountAll";
 		String operation = "Get all accounts from the sqlite DB";

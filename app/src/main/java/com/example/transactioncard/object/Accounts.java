@@ -14,6 +14,11 @@ public class Accounts {
 		this.accountName = _accountName;
 		
 	}
+
+	public Accounts(long accountID, String accountName){
+		this.accountID = accountID;
+		this.accountName = accountName;
+	}
 	
 	public void setAccountName(String accName){
 		this.accountName = accName;

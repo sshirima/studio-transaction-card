@@ -10,17 +10,7 @@ import com.example.transactioncard.database.CurrencyTable;
 
 public class CurrencyConvertor {
 
-	private double rateUSDtoTSH = 1626.39;
-	private double rateUSDtoKES = 87.2549;
-	private double rateUSDtoUGX = 2574.46;
-	private double rateUSDtoEUR = 0.77323;
-	private double rateUSDtoGBP = 0.77323;
-	private final String USD_CODE = Currencies.CURRENCY_CODE_US;
-	private final String TSH_CODE = Currencies.CURRENCY_CODE_TANZANIA;
-	private final String UGX_CODE = Currencies.CURRENCY_CODE_UGANDA;
-	private final String KES_CODE = Currencies.CURRENCY_CODE_KENYA;
-	private final String GBP_CODE = Currencies.CURRENCY_CODE_POUND;
-	private final String EUR_CODE = Currencies.CURRENCY_CODE_EURO;
+
 	public CurrencyConvertor() {
 
 	}
@@ -74,9 +64,9 @@ public class CurrencyConvertor {
 	public double getSavedCurrencyRates(Context context, String currencyCode){
 		CurrencyTable currencyTable = new CurrencyTable(context);
 		currencyTable.open();
-		CurrencyCashFlow currency = currencyTable.getCurrencyByCode(currencyCode);
+		double rate = currencyTable.getRateByCurrencyCode(currencyCode);
 		currencyTable.close();
-		return currency.getRateFromUSD();
+		return rate;
 	}
 
 	public CurrencyCashFlow getSavedCurrency(Context context, String currencyCode){

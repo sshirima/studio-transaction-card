@@ -76,7 +76,7 @@ public class CurrencyTable {
 			long insertId = sqliteDatabase.insert(ConstsDatabase.CURRENCY_TABLE, null,
 					contentValues);
 			
-			newCurrencyCashFlow = getCurrencyById(insertId);
+			//newCurrencyCashFlow = getCurrencyById(insertId);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			ConstsDatabase.logERROR(methodName, operation);
@@ -139,7 +139,7 @@ public class CurrencyTable {
 	 */
 
 	public CurrencyCashFlow getCurrencyByCode(String currencyCode) {
-		String methodName = "getCurrencyById";
+		String methodName = "getCurrencyByCode";
 		String operation = "Get currencyCashFlow from the currencyCashFlow table";
 			/*
 			 * Prepare the query
@@ -160,10 +160,7 @@ public class CurrencyTable {
 
 			cursor = sqliteDatabase.rawQuery(query,conditionArgs);
 			if (cursor.moveToFirst()) {
-				while (!cursor.isAfterLast()) {
 					returnCurrencyCashFlow = cursorToCurrency(cursor);
-					cursor.moveToNext();
-				}
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -171,6 +168,37 @@ public class CurrencyTable {
 		}
 		cursor.close();
 		return returnCurrencyCashFlow;
+	}
+
+
+	public double getRateByCurrencyCode(String currecyCode){
+		String methodName = "getRateFromUSD";
+		String operation = "Read currency rate from database from the given code";
+		double returnValue = 0;
+
+		String tableName = ConstsDatabase.CURRENCY_TABLE;
+		String returnColumn = ConstsDatabase.CURRENCY_RATE;
+		String condition = String.format(ConstsDatabase.SQLSYNTX_CONDITION_EQUALS, ConstsDatabase.CURRENCY_CODE);
+		String query = String.format(ConstsDatabase.SQLSYNTX_QUERY_SELECT_WHERE, returnColumn, tableName, condition);
+
+		ConstsDatabase.logINFO(STR_Classname, methodName, operation);
+
+		try {
+			Cursor cursor = sqliteDatabase.rawQuery(query,new String[]{currecyCode});
+
+			if (cursor.moveToFirst()){
+				int rateIndex = cursor
+						.getColumnIndex(ConstsDatabase.CURRENCY_RATE);
+				returnValue = cursor.getDouble(rateIndex);
+			}
+
+		}catch (Exception ex){
+			ConstsDatabase.logERROR(methodName, operation);
+			ex.printStackTrace();
+		}
+
+
+		return returnValue;
 	}
 	
 	/*
@@ -207,7 +235,7 @@ public class CurrencyTable {
 	/*
 	 * Get currency by Id
 	 */
-	public CurrencyCashFlow getCurrencyById(long id) {
+	public CurrencyCashFlow getCurrencyBy(long id) {
 		String methodName = "getCurrencyById";
 		String operation = "Get currencyCashFlow from the currencyCashFlow table";
 		/*
