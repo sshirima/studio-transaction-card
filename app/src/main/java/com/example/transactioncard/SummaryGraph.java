@@ -404,6 +404,7 @@ public class SummaryGraph extends Activity implements ActionBar.OnNavigationList
                     if (isCheckedrdIncome){
                         rdExpense.setChecked(false);
                     }
+                    
 
                     selectedCategory = ConstsDatabase.CATEGORY_INCOME;
 
