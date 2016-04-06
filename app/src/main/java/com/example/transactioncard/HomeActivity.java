@@ -1,15 +1,20 @@
 package com.example.transactioncard;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Currency;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.TreeSet;
 
 import com.example.transactioncard.database.ConstsDatabase;
 import com.example.transactioncard.database.TransactionTable;
+import com.example.transactioncard.dialogs.DialogTimeChange;
+import com.example.transactioncard.dialogs.DialogTimeRangeSelector;
 import com.example.transactioncard.dialogs.DialogTransactionNew;
 import com.example.transactioncard.dialogs.DialogTransactionNew.NoticeDialogListerner;
 import com.example.transactioncard.dialogs.DialogSingleChoice.ChoiceSelectedListener;
@@ -45,6 +50,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -53,7 +59,7 @@ import android.widget.Toast;
 
 public class HomeActivity extends Activity implements OnNavigationListener,
 		NoticeDialogListerner, DateSetListener, ChoiceSelectedListener,
-		OnItemClickListener {
+		OnItemClickListener, DialogTimeRangeSelector.DialogTimeRangeListerner {
 	
 	public static final String CLASSNAME = HomeActivity.class.getName();
 
@@ -83,7 +89,7 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		/*
 		 * Set up the action bar
 		 */
-		ConstsDatabase.logINFO(CLASSNAME, methodName, "Set up: Home actionbar");
+//		ConstsDatabase.logINFO(CLASSNAME, methodName, "Set up: Home actionbar");
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setDisplayShowTitleEnabled(false);
@@ -91,14 +97,14 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		/*
 		 * Creating  action bar dropdown menu
 		 */
-		ConstsDatabase.logINFO(CLASSNAME, methodName, "Set up: Action bar dropdown spinner");
+//		ConstsDatabase.logINFO(CLASSNAME, methodName, "Set up: Action bar dropdown spinner");
 		ArrayAdapter<CharSequence> actionbarDropdownSpinner = getDropDownSpinner();
 		actionBar.setListNavigationCallbacks(actionbarDropdownSpinner, this);
 		
 		/*
 		 * Set up home listView
 		 */
-		ConstsDatabase.logINFO(CLASSNAME, methodName, "Set up:Home listview adapter");
+//		ConstsDatabase.logINFO(CLASSNAME, methodName, "Set up:Home listview adapter");
 		homeListViewAdapter = new HomeListViewAdapter(this);
 		
 		/*
@@ -205,7 +211,7 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 			break;
 
 		case R.id.viewSummary:
-			Intent intent1 = new Intent(HomeActivity.this, Summary.class);
+			Intent intent1 = new Intent(HomeActivity.this, SummaryGraph.class);
 			startActivity(intent1);
 			break;
 
@@ -283,6 +289,7 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 			System.out.println("***Transaction not saved****");
 		}
 		dialog.dismiss();
+        newRecordDialogAlert = null;
 	}
 
 	@Override
@@ -290,23 +297,150 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		// TODO Auto-generated method stub
 		Toast.makeText(getApplicationContext(), "Canceled", Toast.LENGTH_SHORT)
 				.show();
+        newRecordDialogAlert = null;
+	}
+
+	@Override
+	public void onTimeChange(DialogFragment dialogFrag, int hour, int minute,
+							 boolean isStart) {
+		// TODO Auto-generated method stub
+		Dialog dialog = dialogFrag.getDialog();
+
+		if (newRecordDialogAlert != null){
+			TextView textView = (TextView) dialog
+					.findViewById(R.id.tvNewTransactionValueTime);
+			if (calendarNewTransaction == null) {
+				calendarNewTransaction = Calendar.getInstance();
+			}
+			calendarNewTransaction.set(Calendar.HOUR_OF_DAY, hour);
+			calendarNewTransaction.set(Calendar.MINUTE, minute);
+			String time = Transaction.getFormatedTime(calendarNewTransaction);
+			textView.setText(time);
+		} else if (dialogTimeRangeSelector != null){
+			Calendar calendar;
+
+			if (dialogTimeRangeSelector.isClickedTimeFrom()){
+
+				if (dialogTimeRangeSelector.getCalendarFrom() != null){
+					calendar = dialogTimeRangeSelector.getCalendarFrom();
+					calendar.set(Calendar.HOUR_OF_DAY, hour);
+					calendar.set(Calendar.MINUTE, minute);
+					dialogTimeRangeSelector.setCalendarFrom(calendar);
+				} else {
+					calendar = Calendar.getInstance();
+					calendar.set(Calendar.HOUR_OF_DAY,hour);
+					calendar.set(Calendar.MINUTE, hour);
+					dialogTimeRangeSelector.setCalendarFrom(calendar);
+				}
+				/*
+				Update editText
+				 */
+				EditText editText = (EditText)dialog.findViewById(R.id.etTimeRangeFrom);
+				editText.setText(getFormatedTime(calendar));
+
+				dialogTimeRangeSelector.setIsClickedTimeFrom(false);
+
+			} else if (dialogTimeRangeSelector.isClickedTimeTo()){
+
+				if (dialogTimeRangeSelector.getCalendarTo() != null){
+					calendar = dialogTimeRangeSelector.getCalendarTo();
+					calendar.set(Calendar.HOUR_OF_DAY, hour);
+					calendar.set(Calendar.MINUTE, minute);
+					dialogTimeRangeSelector.setCalendarTo(calendar);
+				} else {
+					calendar = Calendar.getInstance();
+					calendar.set(Calendar.HOUR_OF_DAY, hour);
+					calendar.set(Calendar.MINUTE, minute);
+					dialogTimeRangeSelector.setCalendarTo(calendar);
+				}
+				/*
+				Update editText
+				 */
+				EditText editText = (EditText)dialog.findViewById(R.id.etTimeRangeTo);
+				editText.setText(getFormatedTime(calendar));
+
+				dialogTimeRangeSelector.setIsClickedTimeTo(false);
+			}
+		}
+
 	}
 
 	@Override
 	public void onDateSet(DialogFragment dialogFrag, int year, int month,
 			int day, boolean isStart) {
 		// TODO Auto-generated method stub
-		Dialog dialog = dialogFrag.getDialog();
-		TextView textView = (TextView) dialog
-				.findViewById(R.id.tvNewTransactionValueDate);
-		if (calendarNewTransaction == null) {
-			calendarNewTransaction = Calendar.getInstance();
+		if (newRecordDialogAlert != null){
+            Dialog dialog = dialogFrag.getDialog();
+            TextView textView = (TextView) dialog
+                    .findViewById(R.id.tvNewTransactionValueDate);
+            if (calendarNewTransaction == null) {
+                calendarNewTransaction = Calendar.getInstance();
+            }
+            calendarNewTransaction.set(Calendar.YEAR, year);
+            calendarNewTransaction.set(Calendar.MONTH, month);
+            calendarNewTransaction.set(Calendar.DAY_OF_MONTH, day);
+            String time = Transaction.getFormatedDate(calendarNewTransaction);
+            textView.setText(time);
+        } else if (dialogTimeRangeSelector != null){
+			Dialog dialog = dialogFrag.getDialog();
+			Calendar calendar;
+
+			if (dialogTimeRangeSelector.isClickedCalendarFrom()){
+
+				if (dialogTimeRangeSelector.getCalendarFrom() != null){
+					calendar = dialogTimeRangeSelector.getCalendarFrom();
+					calendar.set(Calendar.YEAR, year);
+					calendar.set(Calendar.MONTH, month);
+					calendar.set(Calendar.DAY_OF_MONTH, day);
+					dialogTimeRangeSelector.setCalendarFrom(calendar);
+				} else {
+					calendar = Calendar.getInstance();
+					calendar.set(Calendar.YEAR, year);
+					calendar.set(Calendar.MONTH, month);
+					calendar.set(Calendar.DAY_OF_MONTH, day);
+					dialogTimeRangeSelector.setCalendarFrom(calendar);
+				}
+				/*
+				Update editText
+				 */
+
+				EditText editText = (EditText)dialog.findViewById(R.id.etTimeRangeFrom);
+				editText.setText(getFormatedTime(calendar));
+
+				dialogTimeRangeSelector.setIsClickedCalendarFrom(false);
+
+			} else if (dialogTimeRangeSelector.isClickedCalendarTo()){
+
+				if (dialogTimeRangeSelector.getCalendarTo() != null){
+					calendar = dialogTimeRangeSelector.getCalendarTo();
+					calendar.set(Calendar.YEAR, year);
+					calendar.set(Calendar.MONTH, month);
+					calendar.set(Calendar.DAY_OF_MONTH, day);
+					dialogTimeRangeSelector.setCalendarTo(calendar);
+				} else {
+					calendar = Calendar.getInstance();
+					calendar.set(Calendar.YEAR, year);
+					calendar.set(Calendar.MONTH, month);
+					calendar.set(Calendar.DAY_OF_MONTH, day);
+					dialogTimeRangeSelector.setCalendarTo(calendar);
+				}
+				/*
+				Update user interface
+				 */
+				EditText editText = (EditText)dialog.findViewById(R.id.etTimeRangeTo);
+				editText.setText(getFormatedTime(calendar));
+				dialogTimeRangeSelector.setIsClickedCalendarTo(false);
+			}
+
 		}
-		calendarNewTransaction.set(Calendar.YEAR, year);
-		calendarNewTransaction.set(Calendar.MONTH, month);
-		calendarNewTransaction.set(Calendar.DAY_OF_MONTH, day);
-		String time = Transaction.getFormatedDate(calendarNewTransaction);
-		textView.setText(time);
+	}
+
+	public static String getFormatedTime(Calendar cal) {
+		SimpleDateFormat sdfDate = new SimpleDateFormat("yyy/MM/d",
+				Locale.ENGLISH);
+		SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm",
+				Locale.ENGLISH);
+		return sdfDate.format(new Date(cal.getTimeInMillis())) + ", " + sdfTime.format(new Date(cal.getTimeInMillis()));
 	}
 
 	@Override
@@ -330,10 +464,11 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		newTransactionCategory = selectedItem;
 	}
 
+    DialogTransactionNew newRecordDialogAlert;
 	private void setNewRecordDialog() {
 		// TODO Auto-generated method stub
 		FragmentManager fragmentManager = getFragmentManager();
-		DialogTransactionNew newRecordDialogAlert = new DialogTransactionNew();
+		newRecordDialogAlert = new DialogTransactionNew();
 		newRecordDialogAlert.show(fragmentManager, "NewRecordDialog");
 	}
 
@@ -342,21 +477,7 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 	private static final int VALUE_WEEK = 2;
 	private static final int VALUE_MONTH = 3;
 
-	@Override
-	public void onTimeChange(DialogFragment dialogFrag, int hour, int minute,
-			boolean isStart) {
-		// TODO Auto-generated method stub
-		Dialog dialog = dialogFrag.getDialog();
-		TextView textView = (TextView) dialog
-				.findViewById(R.id.tvNewTransactionValueTime);
-		if (calendarNewTransaction == null) {
-			calendarNewTransaction = Calendar.getInstance();
-		}
-		calendarNewTransaction.set(Calendar.HOUR_OF_DAY, hour);
-		calendarNewTransaction.set(Calendar.MINUTE, minute);
-		String time = Transaction.getFormatedTime(calendarNewTransaction);
-		textView.setText(time);
-	}
+
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position,
@@ -442,8 +563,8 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 			/*
 			 * Get transactions from the sqlite DB
 			 */
-			transactionList = queryTransactionByTime(homeActivityManager.getStartTimeFromSelectIndex(listNavigationIndex),
-					homeActivityManager.getEndTimeFromSelectIndex(listNavigationIndex));
+			transactionList = queryTransactionByTime(HomeActivityManager.getStartTimeFromSelectIndex(listNavigationIndex),
+					HomeActivityManager.getEndTimeFromSelectIndex(listNavigationIndex));
 			
 			/*
 			 * Add transaction list from the DB to listview adapter
@@ -451,66 +572,79 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 			homeListViewAdapter.addAll(transactionList);
 			
 			transactionListAll.addAll(transactionList);
+			updateFooterSumLabel();
+			displayDataToScreeen();
 			break;
 		case 2:
 		case 3:
-		case 4:
-		case 5:
 			/*
 			 * Query transaction from the sqlite DB
 			 */
-			if (listNavigationIndex != 5){
-				transactionList = queryTransactionByTime(homeActivityManager.getStartTimeFromSelectIndex(listNavigationIndex),
-						homeActivityManager.getEndTimeFromSelectIndex(listNavigationIndex));
-			}else {
+//			if (listNavigationIndex != 5){
+			transactionList = queryTransactionByTime(HomeActivityManager.getStartTimeFromSelectIndex(listNavigationIndex),
+						HomeActivityManager.getEndTimeFromSelectIndex(listNavigationIndex));
+//			}
+			/*else {
 				transactionList = this.queryTransactionsAll();
-			}
-			
-			
-			
+			}*/
+
 			/*
 			 * Put transaction into listView adapter
 			 */
-			Calendar calCurrent = Calendar.getInstance();
-			Calendar calNext = Calendar.getInstance();
-			ArrayList<Transaction> tList = new ArrayList<Transaction>();
-			if (transactionList.size() != 0){
-				for (int i = 0; i < transactionList.size();i++){
-					calCurrent.setTimeInMillis(transactionList.get(i).getTimeInMillis());
-					if (listNavigationIndex == 2){
-						separator = homeActivityManager.getDayOfWeekFromCalendar(calCurrent);
-					} else {
-						separator = homeActivityManager.getDateOfMonthFromCalendar(calCurrent);
-					}
-					
-					tList.add(transactionList.get(i));
-					/*
-					 * Check if there is the next transaction
-					 */
-					if ((i+1) < transactionList.size()){
-						calNext.setTimeInMillis(transactionList.get(i+1).getTimeInMillis());
-						/*
-						 * Check if the next transaction has the same date as this transaction
-						 */
-						if (calCurrent.get(Calendar.DAY_OF_YEAR) != calNext.get(Calendar.DAY_OF_YEAR)){
-							ConstsDatabase.logINFO(CLASSNAME, methodName, "Date not the same:");
-							homeListViewAdapter.addSeparatorItem(separator);
-							homeListViewAdapter.addAll(tList);
-							tList.clear();
-						}
-					} else if ((i+1) == transactionList.size()){
-						ConstsDatabase.logINFO(CLASSNAME, methodName, "Last transaction in the list");
-						homeListViewAdapter.addSeparatorItem(separator);
-						homeListViewAdapter.addAll(tList);
-					}
-				}
-			}
-			
+			putTransactionsOnAdapter(listNavigationIndex);
+			updateFooterSumLabel();
+			displayDataToScreeen();
 			break;
+			case 4 :
+				/*
+				Get the time range from the timeRangeDialog box
+				 */
+				dialogTimeRangeSelector = new DialogTimeRangeSelector();
+                dialogTimeRangeSelector.show(getFragmentManager(), "TimeChangeDialog");
+
+				break;
 		}
-		updateFooterSumLabel();
-		displayDataToScreeen();
+
 	}
+
+	private void putTransactionsOnAdapter(int listNavigationIndex) {
+		String separator;Calendar calCurrent = Calendar.getInstance();
+		Calendar calNext = Calendar.getInstance();
+		ArrayList<Transaction> tList = new ArrayList<Transaction>();
+		if (transactionList.size() != 0){
+            for (int i = 0; i < transactionList.size();i++){
+                calCurrent.setTimeInMillis(transactionList.get(i).getTimeInMillis());
+                if (listNavigationIndex == 2){
+                    separator = homeActivityManager.getDayOfWeekFromCalendar(calCurrent);
+                } else {
+                    separator = homeActivityManager.getDateOfMonthFromCalendar(calCurrent);
+                }
+
+                tList.add(transactionList.get(i));
+                /*
+                 * Check if there is the next transaction
+                 */
+                if ((i+1) < transactionList.size()){
+                    calNext.setTimeInMillis(transactionList.get(i+1).getTimeInMillis());
+                    /*
+                     * Check if the next transaction has the same date as this transaction
+                     */
+                    if (calCurrent.get(Calendar.DAY_OF_YEAR) != calNext.get(Calendar.DAY_OF_YEAR)){
+//							ConstsDatabase.logINFO(CLASSNAME, methodName, "Date not the same:");
+                        homeListViewAdapter.addSeparatorItem(separator);
+                        homeListViewAdapter.addAll(tList);
+                        tList.clear();
+                    }
+                } else if ((i+1) == transactionList.size()){
+//						ConstsDatabase.logINFO(CLASSNAME, methodName, "Last transaction in the list");
+                    homeListViewAdapter.addSeparatorItem(separator);
+                    homeListViewAdapter.addAll(tList);
+                }
+            }
+        }
+	}
+
+	private  DialogTimeRangeSelector dialogTimeRangeSelector;
 
 	private ArrayList<Transaction> queryTransactionsAll() {
 		String methodName = "queryTransactionsByDate";
@@ -557,9 +691,9 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		/*
 		 * Open transaction table to query from
 		 */
-		ArrayList<Transaction> sortedList = homeActivityManager.queryTransactionsBySelection(
+
+		return homeActivityManager.queryTransactionsBySelection(
 				this, methodName, selectionArgs, selection);
-		return sortedList;
 	}
 
 	public static final CharSequence[] CATEGORY_LIST = { "All", "Expenses",
@@ -615,9 +749,9 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 							condStartTime +ConstsDatabase.SQLSYNTX_AND + 
 							condEndTime;
 		
-		ArrayList<Transaction> sortedList = homeActivityManager.queryTransactionsBySelection(
+
+		return homeActivityManager.queryTransactionsBySelection(
 				this, methodName, selectionArgs, selection);
-		return sortedList;
 	}
 
 	public static ArrayList<Transaction> sortListDescendingByTime(
@@ -641,7 +775,29 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		return mSortedList;
 	}
 
-	public static class HomeListViewAdapter extends BaseAdapter {
+    private Calendar calendarFrom;
+    private Calendar calendarTo;
+
+    @Override
+    public void onDialogTimeRangeButtonOk(Calendar calFrom, Calendar calTo) {
+        calendarFrom = calFrom;
+        calendarTo = calTo;
+		dialogTimeRangeSelector = null;
+		/*
+		Query transactions and updates on the listadapter
+		 */
+		transactionList = queryTransactionByTime(calendarFrom, calendarTo);
+		putTransactionsOnAdapter(4);
+		updateFooterSumLabel();
+		displayDataToScreeen();
+    }
+
+    @Override
+    public void onDialogTimeRangeButtonCancel() {
+		dialogTimeRangeSelector = null;
+    }
+
+    public static class HomeListViewAdapter extends BaseAdapter {
 		private static final String CLASSNAME = HomeListViewAdapter.class.getName() ;
 		private static final int TYPE_ITEM = 0;
 		private static final int TYPE_SEPARATOR = 1;

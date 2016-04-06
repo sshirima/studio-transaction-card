@@ -12,7 +12,7 @@ public class ConstsDatabase {
 	public static final String TRANSACTION_TABLE = "TransactionTable";
 	public static final String ACCOUNT_TABLE = "AccountTable";
 	public static final String DESCRIPTION_TABLE = "DescriptionTable";
-	public static final int DATABASE_VERSION = 10;
+	public static final int DATABASE_VERSION = 1;
 	/*
 	 * Transaction table attributes
 	 */
@@ -103,6 +103,41 @@ public class ConstsDatabase {
 	public static final String CURRENCY_RATE = "CurrencyRate";
 	public static final String CURRENCY_FLAG = "FlagId";
 	public static final String CURRENCY_UPDATETIME = "UpdatedTime";
-	
-	
+
+	public static final String SUM_IN_USD = "sumInUSD";
+
+	public static final String QUERY_GET_SUM_BY_DESC_ALL = "select " +
+			DESCRIPTION_ID+", " +
+			DESCRIPTION_NAME+", " +
+			"total("+TRANSACTION_AMOUNT+"/"+CURRENCY_RATE+") as "+SUM_IN_USD+" " +
+			"from " +
+			""+TRANSACTION_TABLE+" " +
+			"inner join " +
+			"(select * from "+CURRENCY_TABLE+" group by "+CURRENCY_CODE+") " +
+			"on "+TRANSACTION_CURRENCY+" = "+CURRENCY_CODE+" " +
+			"inner join "+DESCRIPTION_TABLE+" " +
+			"on "+TRANSACTION_DESCRIPTION+" = "+DESCRIPTION_ID+" " +
+			"where "+TRANSACTION_CATEGORY+" = ? group by "+DESCRIPTION_ID+"";
+
+	public static final String SELECTION_TIME_RANGE = "(" + ConstsDatabase.TRANSACTION_TIME + " >?" + ")"
+			+ " and " + "(" + ConstsDatabase.TRANSACTION_TIME + " <?" + ")";
+
+	public static final String QUERY_GET_SUM_BY_DESC_TIME_RANGE = "select " +
+			DESCRIPTION_ID+", " +
+			DESCRIPTION_NAME+", " +
+			"total("+TRANSACTION_AMOUNT+"/"+CURRENCY_RATE+") as "+SUM_IN_USD+" " +
+			"from " +
+			""+TRANSACTION_TABLE+" " +
+			"inner join " +
+			"(select * from "+CURRENCY_TABLE+" group by "+CURRENCY_CODE+") " +
+			"on "+TRANSACTION_CURRENCY+" = "+CURRENCY_CODE+" " +
+			"inner join "+DESCRIPTION_TABLE+" " +
+			"on "+TRANSACTION_DESCRIPTION+" = "+DESCRIPTION_ID+" " +
+			"where ("+TRANSACTION_CATEGORY+" = ?) and "+SELECTION_TIME_RANGE+" group by "+DESCRIPTION_ID+"";
+
+	/*
+	Query, select all description from description table
+	 */
+
+	public static final String 	QUERY_SELECT_ALL_DESC = "SELECT * FROM "+DESCRIPTION_TABLE;
 }

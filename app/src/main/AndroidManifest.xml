@@ -36,7 +36,7 @@
             android:parentActivityName="com.example.transactioncard.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.transactioncard.Home" />
+                android:value="com.example.transactioncard.HomeActivity" />
         </activity>
         <activity
             android:name=".AccountActivity"
@@ -45,7 +45,7 @@
             android:parentActivityName="com.example.transactioncard.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.transactioncard.Home" />
+                android:value="com.example.transactioncard.HomeActivity" />
         </activity>
         <activity
             android:name=".Summary"
@@ -54,7 +54,7 @@
             android:parentActivityName="com.example.transactioncard.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.transactioncard.Home" />
+                android:value="com.example.transactioncard.HomeActivity" />
         </activity>
         <activity
             android:name=".CurrencyActivity"
@@ -63,7 +63,7 @@
             android:parentActivityName="com.example.transactioncard.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.transactioncard.Home" />
+                android:value="com.example.transactioncard.HomeActivity" />
         </activity>
         <activity
             android:name=".Settings"
@@ -72,7 +72,7 @@
             android:parentActivityName="com.example.transactioncard.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.transactioncard.Home" />
+                android:value="com.example.transactioncard.HomeActivity" />
 
             <intent-filter>
                 <category android:name="android.intent.category.PREFERENCE" />
@@ -104,7 +104,7 @@
             android:label="@string/activity_title_description" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.transactioncard.Home" />
+                android:value="com.example.transactioncard.HomeActivity" />
         </activity>
         <activity
             android:name=".ViewbyDescription"
@@ -121,6 +121,30 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.transactioncard.AccountActivity" />
+        </activity>
+        <activity
+            android:name=".SummaryGraph"
+            android:configChanges="orientation|keyboard"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.AccountActivity" />
+        </activity>
+        <activity
+            android:name=".DualLineGraphActivity"
+            android:configChanges="orientation|keyboard"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.SummaryGraph" />
+        </activity>
+        <activity
+            android:name=".DualBarGraph"
+            android:configChanges="orientation|keyboard"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.SummaryGraph" />
         </activity>
     </application>
 

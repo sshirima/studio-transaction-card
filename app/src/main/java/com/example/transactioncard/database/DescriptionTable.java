@@ -1,6 +1,7 @@
 package com.example.transactioncard.database;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import com.example.transactioncard.object.Description;
@@ -129,7 +130,7 @@ public class DescriptionTable {
 		
 		ConstsDatabase.logINFO(CLASSNAME, methodName, operation);
 		
-		Cursor cursor = sqliteDatabase.rawQuery(query,null);
+		Cursor cursor = sqliteDatabase.rawQuery(query, null);
 		List<Description> returnList = new ArrayList<Description>();
 		
 		/*
@@ -236,7 +237,96 @@ public class DescriptionTable {
 		return description;
 	}
 
-	public static String joinTableStatement() {
+	public ArrayList<Description> getDescriptionAmounts(String category, Calendar startTime, Calendar endTime){
+		String methodName = "getDescriptionAmounts";
+		String operation = "Get total amount by description";
+
+		ConstsDatabase.logINFO(CLASSNAME, methodName, operation);
+
+		ArrayList<Description> returnList = null;
+		Cursor cursor;
+		try{
+
+			String query = ConstsDatabase.QUERY_GET_SUM_BY_DESC_TIME_RANGE;
+			String startTimeInMills = Long.toString(startTime.getTimeInMillis());
+			String endTimeInMills = Long.toString(endTime.getTimeInMillis());
+
+			cursor = sqliteDatabase.rawQuery(query,
+					new String[] { category, startTimeInMills,endTimeInMills});
+
+			if (cursor.moveToFirst()) {
+				returnList = new ArrayList<Description>();
+				while (!cursor.isAfterLast()) {
+					int idIndex = cursor.getColumnIndex(ConstsDatabase.DESCRIPTION_ID);
+					int descriptionIndex = cursor
+							.getColumnIndex(ConstsDatabase.DESCRIPTION_NAME);
+					int sumIndex = cursor.getColumnIndex(ConstsDatabase.SUM_IN_USD);
+
+					Description description = new Description();
+					description.setId(cursor.getLong(idIndex));
+					description.setDescription(cursor.getString(descriptionIndex));
+					description.setAmountTotalInUSD(cursor.getDouble(sumIndex));
+
+					returnList.add(description);
+
+					cursor.moveToNext();
+				}
+			}
+
+
+		}catch (Exception ex){
+			ConstsDatabase.logERROR(methodName,operation);
+			ex.printStackTrace();
+		}
+
+		return returnList;
+	}
+
+    public ArrayList<Description> getTotalByDescriptionAll(String category){
+        String methodName = "getTotalByDescriptionAll";
+        String operation = "Get total amount by description for all transaction on the table";
+
+        ConstsDatabase.logINFO(CLASSNAME, methodName, operation);
+
+        ArrayList<Description> returnList = null;
+        Cursor cursor;
+        try{
+
+            String query = ConstsDatabase.QUERY_GET_SUM_BY_DESC_ALL;
+
+            cursor = sqliteDatabase.rawQuery(query,
+                    new String[] { category});
+
+            if (cursor.moveToFirst()) {
+                returnList = new ArrayList<Description>();
+                while (!cursor.isAfterLast()) {
+                    int idIndex = cursor.getColumnIndex(ConstsDatabase.DESCRIPTION_ID);
+                    int descriptionIndex = cursor
+                            .getColumnIndex(ConstsDatabase.DESCRIPTION_NAME);
+                    int sumIndex = cursor.getColumnIndex(ConstsDatabase.SUM_IN_USD);
+
+                    Description description = new Description();
+                    description.setId(cursor.getLong(idIndex));
+                    description.setDescription(cursor.getString(descriptionIndex));
+                    description.setAmountTotalInUSD(cursor.getDouble(sumIndex));
+
+                    returnList.add(description);
+
+                    cursor.moveToNext();
+                }
+            }
+
+
+        }catch (Exception ex){
+            ConstsDatabase.logERROR(methodName,operation);
+            ex.printStackTrace();
+        }
+
+        return returnList;
+    }
+
+
+    public static String joinTableStatement() {
 		return ConstsDatabase.DESCRIPTION_TABLE ;
 	}
 }

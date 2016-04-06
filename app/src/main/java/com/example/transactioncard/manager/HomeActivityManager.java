@@ -77,7 +77,7 @@ public class HomeActivityManager {
 		
 	}
 	
-	public Calendar getStartTimeFromSelectIndex(int index) {
+	public static Calendar getStartTimeFromSelectIndex(int index) {
 		Calendar mStart = Calendar.getInstance();
 		switch (index) {
 		case 0:
@@ -113,7 +113,7 @@ public class HomeActivityManager {
 		return mStart;
 	}
 	
-	public Calendar getEndTimeFromSelectIndex(int index) {
+	public static Calendar getEndTimeFromSelectIndex(int index) {
 		Calendar mEnd;
 		switch (index) {
 		case 0:

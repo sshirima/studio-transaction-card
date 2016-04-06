@@ -56,10 +56,13 @@ public class Summary extends Activity implements OnCheckedChangeListener,
 		setContentView(R.layout.activity_summary);
 		actionBar = getActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
+
 		mDataRange = VALUE_TODAY;
 		mCurrentStart = getStartTime(VALUE_TODAY);
 		mCurrentEnd = getEndTime(VALUE_TODAY);
+
 		plotGraph(getStartTime(VALUE_TODAY), getEndTime(VALUE_TODAY));
+
 		cbIncome = (CheckBox) findViewById(R.id.cbIncome);
 		cbExpenses = (CheckBox) findViewById(R.id.cbExpenses);
 		cbExpenses.setTextColor(Color.RED);

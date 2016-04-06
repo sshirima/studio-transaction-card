@@ -21,19 +21,32 @@ public class DialogTimeChange extends DialogFragment {
 	private static int newYear;
 	private static int newMonth;
 	private static int newDay;
-	private static int dialogId;
+	private int dialogId = 0;
 	private boolean isStartTime;
 	// date listener
 	DateSetListener onDateSetListener;
 	private DialogFragment dialog;
 	
 	public interface DateSetListener{
-		public void onDateSet(DialogFragment dialogFrag, int year, int month, int day, boolean isStart);
-		public void onTimeChange(DialogFragment dialogFrag, int hour, int minute, boolean isStart);
+		 void onDateSet(DialogFragment dialogFrag, int year, int month, int day, boolean isStart);
+		 void onTimeChange(DialogFragment dialogFrag, int hour, int minute, boolean isStart);
 	}
 	
 	public void setCallingDialog(DialogFragment dialogFragment){
 		this.dialog = dialogFragment;
+	}
+
+
+
+	private int callingDialogID = 0;
+
+	public void setCallingDialog(DialogFragment dialogFragment, int callingDialogID){
+		this.dialog = dialogFragment;
+		this.callingDialogID = callingDialogID;
+	}
+
+	public int getCallingDialogID(){
+		return this.callingDialogID;
 	}
 
 	private DatePickerDialog.OnDateSetListener datePickListener = new DatePickerDialog.OnDateSetListener() {
@@ -44,7 +57,12 @@ public class DialogTimeChange extends DialogFragment {
 			newYear = year;
 			newMonth = month;
 			newDay = day;
-			onDateSetListener.onDateSet(dialog, newYear, newMonth, newDay, isStartTime);
+			try{
+				onDateSetListener.onDateSet(dialog, newYear, newMonth, newDay, isStartTime);
+			}catch(Exception e){
+				System.out.println("Failed to set date:" + e.toString());
+			}
+
 		}
 	};
 
@@ -58,7 +76,7 @@ public class DialogTimeChange extends DialogFragment {
 			try{
 			onDateSetListener.onTimeChange(dialog, newHour, newMinute, isStartTime);
 			}catch(Exception e){
-				System.out.println("This is the error" + e.toString());
+				System.out.println("Failed to set time:" + e.toString());
 			}
 		}
 	};

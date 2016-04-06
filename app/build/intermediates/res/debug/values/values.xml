@@ -214,13 +214,22 @@
         <item>ZAR</item>
         <item>ZWL</item>
     </string-array>
+    <string-array name="summary_graphtitles">
+        <item>Amount Vs Description</item>
+        <item>Amount Vs Time</item>
+
+    </string-array>
+    <string-array name="summary_graphtype">
+        <item>Pie graph</item>
+        <item>Line graph</item>
+        <item>Bar chart</item>
+    </string-array>
     <string-array name="time_filter_list">
         <item>Today</item>
         <item>Yesterday</item>
         <item>Week</item>
-        <item>Month</item>
-        <item>Year</item>
-        <item>All</item>
+        <item>Month</item>s
+        <item>Custom</item>
     </string-array>
     <!-- From: file:/home/samson/android-development-studio/app/src/main/res/values/app_color.xml -->
     <eat-comment/>

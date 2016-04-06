@@ -8,13 +8,16 @@ import com.example.transactioncard.object.CurrencyCashFlow;
 import com.example.transactioncard.object.Description;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
+import java.util.List;
 import java.util.Locale;
 
 public class CashFlowDB extends SQLiteOpenHelper {
@@ -100,6 +103,11 @@ public class CashFlowDB extends SQLiteOpenHelper {
 			database.execSQL(CREATE_ACCOUNT_TABLE);
 			pointer = "Create descripition table";
 			database.execSQL(CREATE_DESCRIPTION_TABLE);
+
+			database.execSQL(CREATE_CURRENCY_TABLE);
+			createCurrencyTable(database);
+
+
 			pointer = "Create views";
 			database.execSQL(createView());
 			logINFO(methodName, operation);
@@ -117,62 +125,89 @@ public class CashFlowDB extends SQLiteOpenHelper {
 		
 	}
 
+
+	private void createCurrencyTable(SQLiteDatabase database) {
+		String methodName = "createCurrencyTable";
+		String operation = "Create currency table";
+		double rate = 1.0;
+
+		String[] iso3166Codes = context.getResources().getStringArray(R.array.code_iso3166);
+
+		for (int i = 0; i < iso3166Codes.length; i++) {
+			String iso3166Code = iso3166Codes[i];
+
+			//Creating Locale instance
+
+			Locale locale = new Locale(iso3166Code, iso3166Code.toUpperCase());
+			String currencyCode = Currency.getInstance(locale).getCurrencyCode();
+			String countryName = locale.getDisplayCountry();
+			int resourcedId = context.getResources().getIdentifier("drawable/" + iso3166Code, null, context.getPackageName());
+
+			CurrencyCashFlow currencyCashFlow = new CurrencyCashFlow(context, currencyCode);
+			currencyCashFlow.setCurrencyName(countryName);
+			currencyCashFlow.setFlagId(resourcedId);
+			currencyCashFlow.setCurrencyRate(rate);
+
+			ContentValues setCV = setDefaultContentValueCurrency(new ContentValues(), currencyCashFlow);
+
+			long id = database.insert(ConstsDatabase.CURRENCY_TABLE, null,
+					setCV);
+			ConstsDatabase.logINFO(CLASSNAME, methodName, id + " added");
+		}
+	}
+
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
 		String methodName = "onUpgrade";
 		String operation = "Upgrade sqliteDB from "+oldVersion +" to "+newVersion;
 		Log.w(CLASSNAME, operation);
-		
-		try {
-			int nextVersion = oldVersion+1;
-			while (nextVersion <= newVersion) {
 
-				switch (nextVersion) {
-					case 2:
-						/*
-						 * Add currency table
-						 */
-						db.execSQL(CREATE_CURRENCY_TABLE);
+		/*
+		 Loop through each version of the DB
+		 */
+		int upgradeTo = oldVersion+1;
+		while (upgradeTo <= newVersion){
 
-						double rate = 1.0;
+			switch(upgradeTo){
+				/*
+				Add description category column to the descriptiontable
+				 */
+				case 2:
+					/*
+					Add description column query
+					 */
+					String query_add_new_col = "ALTER TABLE "+ConstsDatabase.DESCRIPTION_TABLE+" ADD COLUMN desc_category";
 
-						String[] iso3166Codes = context.getResources().getStringArray(R.array.code_iso3166);
+					/*
+					Query all data from the description table
+					 */
+					String query = ConstsDatabase.QUERY_SELECT_ALL_DESC;
 
-						for (int i = 0; i < iso3166Codes.length; i++) {
-							String iso3166Code = iso3166Codes[i];
-							/*
-							Creating Locale instance
-							 */
-							Locale locale = new Locale(iso3166Code, iso3166Code.toUpperCase());
-							String currencyCode = Currency.getInstance(locale).getCurrencyCode();
-							String countryName = locale.getDisplayCountry();
-							int resourcedId = context.getResources().getIdentifier("drawable/" + iso3166Code, null, context.getPackageName());
+					Cursor cursor = db.rawQuery(query, null);
 
-							CurrencyCashFlow currencyCashFlow = new CurrencyCashFlow(context, currencyCode);
-							currencyCashFlow.setCurrencyName(countryName);
-							currencyCashFlow.setFlagId(resourcedId);
-							currencyCashFlow.setCurrencyRate(rate);
+					List<Description> returnList = new ArrayList<Description>();
 
-							ContentValues setCV = setDefaultContentValueCurrency(new ContentValues(), currencyCashFlow);
+					if (cursor.moveToFirst()){
 
-							long id = db.insert(ConstsDatabase.CURRENCY_TABLE, null,
-									setCV);
-							ConstsDatabase.logINFO(CLASSNAME, methodName, id + " added");
+						while (!cursor.isAfterLast()) {
+							Description newDescription = DescriptionTable.cursorToDescription(cursor);
+							returnList.add(newDescription);
+							cursor.moveToNext();
 						}
+					}
 
-						break;
+					/*
+					Iterate through the rows of the description table and fill in the Desccategory column
+					 */
 
-				}
-				nextVersion = nextVersion + 1;
+					/*
+
+					 */
+				break;
 			}
-		    
-		} catch (SQLException e) {
-			// TODO: handle exception
-			if (BuildConfig.DEBUG) {
-				String errorMsg = "Upgrade the DB from"+oldVersion+" to "+newVersion;
-				Log.e(methodName, String.format(ConstsDatabase.STRERR_FailedTo, errorMsg));
-			}
+
+			upgradeTo++;
 		}
 		
 	}

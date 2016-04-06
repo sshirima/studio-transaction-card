@@ -14,15 +14,18 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ViewbyDescription extends Activity{
 
 	private ListView lvViewbyDesc;
+	private TextView tvViewByDescFooterSummary;
 	private ActionBar actionBar;
 	private int expenseSum = 0;
 	private int incomeSum = 0;
 	private final String SUBTITLE_MSG = "Income: %s, Expenses: %s";
-	
+	Description selectedDescription;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -46,11 +49,11 @@ public class ViewbyDescription extends Activity{
 		Bundle bundle = getIntent().getExtras();
 		long id = bundle.getLong(Consts.STRBUNDLE_DESC_ID);
 		CacheDescription cache = new CacheDescription(getApplicationContext());
-		Description description = cache.getDescription(id);
+		selectedDescription = cache.getDescription(id);
 		/*
 		 * Query transaction from the DB based on the selected description Id
 		 */
-		transactionList = getTransactions(description);
+		transactionList = getTransactions(selectedDescription);
 		/*
 		 * Add the transaction list to the listtview adapter
 		 */
@@ -66,7 +69,7 @@ public class ViewbyDescription extends Activity{
 		String incomeTotal =new DecimalFormat().format((int) Math.round(incomeSum))+ " "+currency;
 		
 		String suTitleMsg = String.format(SUBTITLE_MSG, incomeTotal, expenseTotal);
-		actionBar.setTitle(description.getDescription());
+		actionBar.setTitle(selectedDescription.getDescription());
 		actionBar.setSubtitle(suTitleMsg);
 		/*
 		 * Set adapter to the activity list view
@@ -88,6 +91,7 @@ public class ViewbyDescription extends Activity{
 	private ArrayList<Transaction> transactionList;
 
 	private void setUpListView() {
+		tvViewByDescFooterSummary = (TextView) findViewById(R.id.tvViewByDescFooterSummary);
 		lvViewbyDesc = (ListView)findViewById(R.id.lvViewbyDescription);
 		listAdapter = new HomeListViewAdapter(getApplicationContext());
 		
