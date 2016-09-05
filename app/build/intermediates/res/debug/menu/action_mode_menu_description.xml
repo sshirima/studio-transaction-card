@@ -9,4 +9,4 @@
         android:title="@string/action_delete"
         android:showAsAction="always"/>
 
-</menu><!-- From: file:/home/samson/android-development-studio/app/src/main/res/menu/action_mode_menu_description.xml -->
+</menu><!-- From: file:/home/samson/android/android-development-studio/app/src/main/res/menu/action_mode_menu_description.xml -->

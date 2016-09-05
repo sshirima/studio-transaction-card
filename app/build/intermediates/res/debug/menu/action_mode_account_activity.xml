@@ -23,4 +23,4 @@
         android:title="@string/action_edit"
         android:showAsAction="always"/>
 
-</menu><!-- From: file:/home/samson/android-development-studio/app/src/main/res/menu/action_mode_account_activity.xml -->
+</menu><!-- From: file:/home/samson/android/android-development-studio/app/src/main/res/menu/action_mode_account_activity.xml -->

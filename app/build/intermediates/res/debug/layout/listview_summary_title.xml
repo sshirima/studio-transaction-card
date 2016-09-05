@@ -33,4 +33,4 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textStyle="italic" />
 
-</LinearLayout><!-- From: file:/home/samson/android-development-studio/app/src/main/res/layout/listview_summary_title.xml -->
+</LinearLayout><!-- From: file:/home/samson/android/android-development-studio/app/src/main/res/layout/listview_summary_title.xml -->

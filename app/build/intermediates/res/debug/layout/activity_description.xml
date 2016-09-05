@@ -34,4 +34,4 @@
         android:layout_below="@+id/llDescriptionNewEdittext" >
     </ListView>
 
-</RelativeLayout><!-- From: file:/home/samson/android-development-studio/app/src/main/res/layout/activity_description.xml -->
+</RelativeLayout><!-- From: file:/home/samson/android/android-development-studio/app/src/main/res/layout/activity_description.xml -->

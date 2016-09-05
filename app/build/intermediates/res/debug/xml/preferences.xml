@@ -20,4 +20,4 @@
         android:key="currencyCashFlow"
         android:summary="@string/prefs_currency_sum"
         android:title="@string/currency_title" />
-</PreferenceScreen><!-- From: file:/home/samson/android-development-studio/app/src/main/res/xml/preferences.xml -->
+</PreferenceScreen><!-- From: file:/home/samson/android/android-development-studio/app/src/main/res/xml/preferences.xml -->
