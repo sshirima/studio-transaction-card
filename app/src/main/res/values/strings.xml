@@ -82,13 +82,17 @@
     <string name="time">Time</string>
     <string name="category">Category</string>
     <string name="date_and_time">Time of date</string>
+
+    <string name="drawer_actions_transaction">Transactions</string>
+    <string name="drawer_actions_summary">Summary</string>
     
     <string name="new_acc_label_name">Account name:</string>
 	<string name="new_acc_name_et_hint">Enter new account name</string>
 	<string name="new_acc_name_dialog_title">Create new account</string>
 	<string name="new_acc_name_but_create">Create</string>
 	<string name="new_acc_name_but_cancel">Cancel</string>
-	
+    <string name="navigation_view_header_title">Tcard</string>
+
 	<string name="act_mode_acc_activity_text">Display text</string>
 	<string name="dialog_delete_account_title">Delete account</string>
 	<string name="dialog_delete_account_message">Deleting selected account(s) 
@@ -97,7 +101,8 @@
 	    										Are you sure you want to delele?</string>
 	<string name="dialog_edit_acc_title">Edit account settings</string>
 	<string name="dialog_edit_button_save">Save changes</string>
-	
+    <string name="text_expense">Expense</string>
+    <string name="text_income">Income</string>
 	
     <string-array name="time_filter_list">
         <item>Today</item>

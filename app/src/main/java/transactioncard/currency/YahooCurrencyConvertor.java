@@ -7,11 +7,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
+//import org.apache.http.client.HttpClient;
+//import org.apache.http.client.ResponseHandler;
+//import org.apache.http.client.methods.HttpGet;
+//import org.apache.http.impl.client.BasicResponseHandler;
+//import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.example.transactioncard.database.ConstsDatabase;
 
@@ -23,13 +23,13 @@ public class YahooCurrencyConvertor implements YahooConvertorInterface {
 	public float getCurrencyRates(String currencyFrom, String currencyTo)
 			throws Exception {
 		// TODO Auto-generated method stub
-		HttpClient httpclient = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet("http://quote.yahoo.com/d/quotes.csv?s="
-				+ currencyFrom + currencyTo + "=X&f=l1&e=.csv");
-		ResponseHandler<String> responseHandler = new BasicResponseHandler();
-		String responseBody = httpclient.execute(httpGet, responseHandler);
-		httpclient.getConnectionManager().shutdown();
-		return Float.parseFloat(responseBody);
+//		HttpClient httpclient = new DefaultHttpClient();
+//		HttpGet httpGet = new HttpGet("http://quote.yahoo.com/d/quotes.csv?s="
+//				+ currencyFrom + currencyTo + "=X&f=l1&e=.csv");
+//		ResponseHandler<String> responseHandler = new BasicResponseHandler();
+//		String responseBody = httpclient.execute(httpGet, responseHandler);
+//		httpclient.getConnectionManager().shutdown();
+		return 1;//Float.parseFloat(responseBody);
 	}
 
 	@Override
