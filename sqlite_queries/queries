@@ -1,0 +1,7 @@
+select * from currencytable group by currencycode;
+
+select * from transactiontable;
+
+select transactionid, transactionamount, descName, transactioncategory, currencyrate, (transactionamount/currencyrate) as amountinUSD from transactiontable inner join (select * from currencytable group by currencycode) on transactioncurrency = currencycode inner join descriptiontable on transactiondescription = descid;
+
+

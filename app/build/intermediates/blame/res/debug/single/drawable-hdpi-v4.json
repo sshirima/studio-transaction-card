@@ -1,0 +1,674 @@
+[
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/pk.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/pk.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_done.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-hdpi/ic_done.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bw.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/bw.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_statistics.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-hdpi/ic_statistics.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/nz.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/nz.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ie.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ie.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/rs.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/rs.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/co.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/co.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/gt.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/gt.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_edit.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_action_edit.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/at.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/at.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/id.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/id.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/iq.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/iq.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/us.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/us.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_36dp.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/sv.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/sv.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tz.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/tz.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/vn.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/vn.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/cz.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/cz.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/cn.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/cn.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/sy.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/sy.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tn.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/tn.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ba.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ba.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/af.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/af.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ru.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ru.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ug.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ug.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/sk.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/sk.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/mh.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/mh.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/au.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/au.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/mt.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/mt.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ar.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ar.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/no.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/no.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/nl.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/nl.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/it.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/it.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/si.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/si.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/in.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/in.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/lu.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/lu.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/li.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/li.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ca.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ca.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ec.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ec.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/pt.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/pt.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/py.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/py.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tr.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/tr.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/gr.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/gr.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bh.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/bh.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/qa.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/qa.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/th.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/th.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_nodata.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_nodata.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_16dp.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/fi.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/fi.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/pa.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/pa.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/mo.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/mo.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_arrow_down.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_arrow_down.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/jp.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/jp.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_list.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-hdpi/ic_list.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/mx.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/mx.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/jm.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/jm.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ae.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ae.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_add.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-hdpi/ic_add.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/hn.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/hn.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/hk.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/hk.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_save.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_action_save.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bz.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/bz.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_arrow_up.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_arrow_up.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/fr.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/fr.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/pe.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/pe.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/zw.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/zw.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/me.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/me.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/dz.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/dz.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/br.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/br.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/gb.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/gb.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/uy.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/uy.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_longpressed_holo.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/jo.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/jo.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/sg.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/sg.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/be.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/be.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ua.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ua.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ro.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ro.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/kr.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/kr.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/lv.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/lv.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ly.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ly.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/mc.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/mc.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/bg.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tw.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/tw.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_refresh.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_action_refresh.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/lb.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/lb.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/es.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/es.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tt.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/tt.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ve.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ve.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/eg.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/eg.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/hu.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/hu.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/hr.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/hr.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_discard.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_action_discard.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/se.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/se.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ni.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ni.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_menu.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/om.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/om.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ch.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ch.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ph.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ph.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/dk.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/dk.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_new.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_action_new.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_edit_holo_dark.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_action_edit_holo_dark.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/de.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/de.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bi.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/bi.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/lt.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/lt.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/cl.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/cl.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/kw.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/kw.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ye.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ye.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bo.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/bo.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/sd.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/sd.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_usa.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_usa.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/pr.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/pr.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_48dp.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/sa.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/sa.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_cancel.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ic_action_cancel.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/pl.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/pl.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/il.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/il.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/rw.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/rw.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ir.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ir.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/cr.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/cr.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/vi.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/vi.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ke.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ke.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ma.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/ma.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/za.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-hdpi/za.png"
+    }
+]

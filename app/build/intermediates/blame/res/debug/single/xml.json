@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/xml/settings_1.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/xml/settings_1.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/xml/preferences.xml"
+    }
+]

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_space">
+
+    <LinearLayout
+        android:id="@+id/llFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvLlFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From"
+                android:textSize="15dp"
+                android:paddingRight="@dimen/padding_space"
+                android:layout_alignParentLeft="true"/>
+            <EditText
+                android:id="@+id/etTimeRangeFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvLlFrom"
+                android:layout_toLeftOf="@+id/ivTimeRangeFromPickCalender"
+                android:text=""
+                android:textSize="15dp"
+                />
+            <ImageView
+                android:id="@+id/ivTimeRangeFromPickCalender"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/vLlFromSeparator"
+                android:contentDescription="@string/date"
+                android:src="@android:drawable/ic_menu_my_calendar" />
+            <View
+                android:id="@+id/vLlFromSeparator"
+                android:layout_width="@dimen/separator_width"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTimeRangeFromPickTime"
+                android:background="@color/transparent_gray" />
+            <ImageView
+                android:id="@+id/ivTimeRangeFromPickTime"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/time"
+                android:src="@android:drawable/ic_menu_recent_history"
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/padding_space">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvLlTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To"
+                android:textSize="15dp"
+                android:paddingRight="@dimen/padding_space"
+                android:layout_alignParentLeft="true"
+                />
+            <EditText
+                android:id="@+id/etTimeRangeTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvLlTo"
+                android:layout_toLeftOf="@+id/ivTimeRangeToPickCalender"
+                android:text=""
+                android:textSize="15dp"
+                />
+            <ImageView
+                android:id="@+id/ivTimeRangeToPickCalender"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/vLlToSeparator"
+                android:contentDescription="@string/date"
+                android:src="@android:drawable/ic_menu_my_calendar" />
+            <View
+                android:id="@+id/vLlToSeparator"
+                android:layout_width="@dimen/separator_width"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivTimeRangeToPickTime"
+                android:background="@color/transparent_gray" />
+            <ImageView
+                android:id="@+id/ivTimeRangeToPickTime"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/time"
+                android:src="@android:drawable/ic_menu_recent_history"
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/padding_space">
+        <Button
+            android:id="@+id/btTimeRangeCancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/btTimeRangeOk"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="Ok" />
+
+    </LinearLayout>
+</LinearLayout>

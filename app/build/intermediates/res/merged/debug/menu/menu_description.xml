@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+     >
+
+ <item
+        android:id="@+id/action_new_description"
+        android:icon="@drawable/ic_action_new"
+        android:orderInCategory="2"
+        android:title="@string/save"
+        android:showAsAction="always"
+        />
+    
+</menu>

@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_list.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-ldpi/ic_list.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_arrow_down.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-ldpi/ic_arrow_down.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_action_cancel.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-ldpi/ic_action_cancel.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_arrow_up.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/drawable-ldpi/ic_arrow_up.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_menu.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_statistics.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-ldpi/ic_statistics.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_add.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-ldpi/ic_add.png"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_done.png",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-ldpi/ic_done.png"
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/drawer_actions.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/drawer_actions.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_account.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_account.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_description.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_description.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_dualbargraph.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_dualbargraph.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/action_mode_menu.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/action_mode_menu.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_currency_exchange.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_currency_exchange.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/action_mode_account_activity.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/action_mode_account_activity.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_home.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_home.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/action_mode_menu_description.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/action_mode_menu_description.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_duallinechart.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_duallinechart.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_transaction_details.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_transaction_details.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/menu/menu_summarygraph.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/src/main/res/menu/menu_summarygraph.xml"
+    }
+]

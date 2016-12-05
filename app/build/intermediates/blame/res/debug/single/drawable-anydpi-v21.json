@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_statistics.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_statistics.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_add.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_add.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_list.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_list.xml"
+    },
+    {
+        "merged": "/home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_done.xml",
+        "source": "/home/sshirima/android/projects/imported/android-development-studio/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_done.xml"
+    }
+]

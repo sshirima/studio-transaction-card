@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.transactioncard"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+    <application
+        android:name="com.android.tools.fd.runtime.BootstrapApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.tcard.mvp.display.DisplayTransActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.tcard.mvp.addedit.AddTransActivity" />
+        <activity
+            android:name="com.example.transactioncard.TransactionDetails"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/activity_transaction_details"
+            android:parentActivityName="com.example.transactioncard.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.AccountActivity"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/account"
+            android:parentActivityName="com.example.transactioncard.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.Summary"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/view_summary"
+            android:parentActivityName="com.example.transactioncard.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.CurrencyActivity"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/exchange_rates"
+            android:parentActivityName="com.example.transactioncard.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.Settings"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/settings"
+            android:parentActivityName="com.example.transactioncard.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.HomeActivity" />
+
+            <intent-filter>
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.AboutActivity"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/about_title" >
+            <intent-filter>
+                <action android:name="com.example.transactioncard.About" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.ImportAndExport"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/transfer_data" >
+            <intent-filter>
+                <action android:name="com.example.transactioncard.ImportAndExport" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.DescriptionActivity"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/activity_title_description" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.ViewbyDescription"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/activity_view_by_descr" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.DescriptionActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.AccountDetailActivity"
+            android:configChanges="orientation|keyboard" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.AccountActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.SummaryGraph"
+            android:configChanges="orientation|keyboard" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.AccountActivity" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.DualLineGraphActivity"
+            android:configChanges="orientation|keyboard" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.SummaryGraph" />
+        </activity>
+        <activity
+            android:name="com.example.transactioncard.DualBarGraph"
+            android:configChanges="orientation|keyboard" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.transactioncard.SummaryGraph" />
+        </activity>
+    </application>
+
+</manifest>
