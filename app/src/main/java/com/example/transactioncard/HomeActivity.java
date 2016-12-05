@@ -1165,6 +1165,7 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 					}
 				});
 		builder.create().show();
+
 	}
 
 	private Transaction selectedTransaction;
