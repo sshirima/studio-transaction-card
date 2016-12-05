@@ -1,4 +1,4 @@
-package com.example.tcard.mvp.displaytransactions;
+package com.example.tcard.mvp.display;
 
 /**
  * Created by sshirima on 9/19/16.

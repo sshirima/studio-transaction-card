@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:2:1-150:12
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:2:1-151:12
 	package
 		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml
@@ -129,7 +129,7 @@ ADDED from /home/sshirima/android/projects/imported/android-development-studio/a
 	android:name
 		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:15:22-77
 application
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:17:5-148:19
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:17:5-149:19
 MERGED from [com.android.support:support-v4:24.2.1] /home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.1] /home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:24.2.1] /home/sshirima/android/projects/imported/android-development-studio/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/AndroidManifest.xml:25:5-20
@@ -218,12 +218,12 @@ MERGED from [com.android.support:support-compat:24.2.1] /home/sshirima/android/p
 		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:19:9-45
 	android:theme
 		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:21:9-40
-activity#com.example.tcard.mvp.displaytransactions.TransactionsActivity
+activity#com.example.tcard.mvp.display.DisplayTransActivity
 ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:22:9-30:20
 	android:label
 		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:24:13-45
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:23:13-90
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:23:13-78
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
@@ -234,137 +234,141 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:28:17-77
 	android:name
 		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:28:27-74
+activity#com.example.tcard.mvp.addedit.AddTransActivity
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:31:9-92
+	android:name
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:31:19-80
 activity#com.example.transactioncard.TransactionDetails
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:31:9-39:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:32:9-40:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:34:13-65
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:35:13-65
 	android:parentActivityName
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:35:13-82
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:36:13-82
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:33:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:34:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:32:13-47
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:33:13-47
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:36:13-38:76
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:37:13-39:76
 	android:value
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:38:17-73
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:39:17-73
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:37:17-63
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:38:17-63
 activity#com.example.transactioncard.AccountActivity
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:40:9-48:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:41:9-49:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:43:13-44
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:44:13-44
 	android:parentActivityName
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:44:13-82
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:45:13-82
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:42:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:43:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:41:13-44
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:42:13-44
 activity#com.example.transactioncard.Summary
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:49:9-57:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:50:9-58:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:52:13-49
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:53:13-49
 	android:parentActivityName
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:53:13-82
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:54:13-82
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:51:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:52:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:50:13-36
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:51:13-36
 activity#com.example.transactioncard.CurrencyActivity
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:58:9-66:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:59:9-67:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:61:13-51
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:62:13-51
 	android:parentActivityName
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:62:13-82
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:63:13-82
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:60:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:61:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:59:13-45
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:60:13-45
 activity#com.example.transactioncard.Settings
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:67:9-79:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:68:9-80:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:70:13-45
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:71:13-45
 	android:parentActivityName
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:71:13-82
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:72:13-82
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:69:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:70:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:68:13-37
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:69:13-37
 intent-filter#android.intent.category.PREFERENCE
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:76:13-78:29
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:77:13-79:29
 category#android.intent.category.PREFERENCE
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:77:17-79
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:78:17-79
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:77:27-76
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:78:27-76
 activity#com.example.transactioncard.AboutActivity
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:80:9-89:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:81:9-90:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:83:13-48
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:84:13-48
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:82:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:83:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:81:13-42
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:82:13-42
 intent-filter#android.intent.category.DEFAULT+com.example.transactioncard.About
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:84:13-88:29
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:85:13-89:29
 action#com.example.transactioncard.About
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:85:17-76
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:86:17-76
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:85:25-73
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:86:25-73
 category#android.intent.category.DEFAULT
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:87:17-76
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:88:17-76
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:87:27-73
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:88:27-73
 activity#com.example.transactioncard.ImportAndExport
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:90:9-99:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:91:9-100:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:93:13-50
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:94:13-50
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:92:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:93:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:91:13-44
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:92:13-44
 intent-filter#android.intent.category.DEFAULT+com.example.transactioncard.ImportAndExport
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:94:13-98:29
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:95:13-99:29
 action#com.example.transactioncard.ImportAndExport
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:95:17-86
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:96:17-86
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:95:25-83
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:96:25-83
 activity#com.example.transactioncard.DescriptionActivity
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:100:9-107:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:101:9-108:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:103:13-63
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:104:13-63
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:102:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:103:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:101:13-48
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:102:13-48
 activity#com.example.transactioncard.ViewbyDescription
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:108:9-115:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:109:9-116:20
 	android:label
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:111:13-59
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:112:13-59
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:110:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:111:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:109:13-46
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:110:13-46
 activity#com.example.transactioncard.AccountDetailActivity
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:116:9-123:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:117:9-124:20
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:118:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:119:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:117:13-50
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:118:13-50
 activity#com.example.transactioncard.SummaryGraph
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:124:9-131:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:125:9-132:20
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:126:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:127:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:125:13-41
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:126:13-41
 activity#com.example.transactioncard.DualLineGraphActivity
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:132:9-139:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:133:9-140:20
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:134:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:135:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:133:13-50
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:134:13-50
 activity#com.example.transactioncard.DualBarGraph
-ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:140:9-147:20
+ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:141:9-148:20
 	android:configChanges
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:142:13-57
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:143:13-57
 	android:name
-		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:141:13-41
+		ADDED from /home/sshirima/android/projects/imported/android-development-studio/app/src/main/AndroidManifest.xml:142:13-41

@@ -1,6 +1,6 @@
 package com.example.tcard.mvp.data.source;
 
-import com.example.tcard.mvp.utils.Transaction;
+import com.example.tcard.mvp.data.Transaction;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -61,6 +61,23 @@ public class TransactionsCache implements  TransactionsTableInterface{
     public void getTransactions(final LoadTransactionsCallback callback) {
 
         if (callback != null){
+            //If cache is empty, look at the local source
+            if (cachedTransactions == null && cacheisDirty){
+                //Query local storage if available
+                localTransactionTable.getTransactions(new LoadTransactionsCallback() {
+                    @Override
+                    public void onTrasactionsLoaded(List<Transaction> transactions) {
+                        refreshCache(transactions);
+                        callback.onTrasactionsLoaded(new ArrayList<Transaction>(cachedTransactions.values()));
+                    }
+                    @Override
+                    public void onDataNotAvailable() {
+                        //Nothing for now
+                    }
+                });
+                return;
+            }
+
             //Respond immediately to cache if available and not dirty
             if (cachedTransactions != null && !cacheisDirty){
                 callback.onTrasactionsLoaded(new ArrayList<Transaction>(cachedTransactions.values()));
@@ -69,9 +86,6 @@ public class TransactionsCache implements  TransactionsTableInterface{
 
             if (cacheisDirty){
                 //If cache is dirty we need to fetch new data from the network
-
-            } else {
-                //Query local storage if available, if not query the network
                 localTransactionTable.getTransactions(new LoadTransactionsCallback() {
                     @Override
                     public void onTrasactionsLoaded(List<Transaction> transactions) {
@@ -84,6 +98,9 @@ public class TransactionsCache implements  TransactionsTableInterface{
                         //Nothing for now
                     }
                 });
+            } else {
+                //Query local storage if available, if not query the network
+
             }
 
         }else{

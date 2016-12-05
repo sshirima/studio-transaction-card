@@ -1,6 +1,6 @@
 package com.example.tcard.mvp.data.source;
 
-import com.example.tcard.mvp.utils.Description;
+import com.example.tcard.mvp.data.Description;
 
 import java.util.List;
 
@@ -10,7 +10,9 @@ import java.util.List;
 public interface DescriptionTableInterface {
 
     interface LoadDescriptionsCallback{
-        void onDescriptionLoaded(List<Description> descriptions);
+
+        void onDescriptionsLoaded(List<Description> descriptions);
+
         void onDataNotAvailable();
     }
 
@@ -19,5 +21,15 @@ public interface DescriptionTableInterface {
         void onDataNotAvailable();
     }
 
+    void getDescriptions(LoadDescriptionsCallback callback);
 
+    void getDescription(String descriptionId, GetDescriptionCallback callback);
+
+    void saveDescription(Description description);
+
+    void refreshDescriptions();
+
+    void deleteAllDescriptions();
+
+    void deleteDescription(String descriptionId);
 }

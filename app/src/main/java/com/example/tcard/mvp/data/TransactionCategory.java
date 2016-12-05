@@ -1,4 +1,4 @@
-package com.example.tcard.mvp.utils;
+package com.example.tcard.mvp.data;
 
 /**
  * Created by sshirima on 9/23/16.

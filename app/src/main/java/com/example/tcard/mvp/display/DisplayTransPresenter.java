@@ -1,8 +1,8 @@
-package com.example.tcard.mvp.displaytransactions;
+package com.example.tcard.mvp.display;
 
 import android.app.Activity;
 
-import com.example.tcard.mvp.utils.Transaction;
+import com.example.tcard.mvp.data.Transaction;
 import com.example.tcard.mvp.data.source.TransactionsCache;
 import com.example.tcard.mvp.data.source.TransactionsTableInterface;
 
@@ -15,7 +15,7 @@ import static com.example.tcard.mvp.Preconditions.checkNotNull;
 /**
  * Created by sshirima on 9/19/16.
  */
-public class TransactionsPresenter implements DisplayTransContract.Presenter{
+public class DisplayTransPresenter implements DisplayTransContract.Presenter{
 
     private final TransactionsCache mTransactionsCache;
 
@@ -25,7 +25,7 @@ public class TransactionsPresenter implements DisplayTransContract.Presenter{
 
     private TransactionFilterType mCurrentFiltering = TransactionFilterType.TODAY;
 
-    public TransactionsPresenter(TransactionsCache transactionsCache, DisplayTransContract.View displayView) {
+    public DisplayTransPresenter(TransactionsCache transactionsCache, DisplayTransContract.View displayView) {
         this.mTransactionsCache = checkNotNull(transactionsCache, "TransactionPresenter#TransactionPresenter:" +
                 "TransactionCache cannot be null");
         this.mDisplayView = checkNotNull(displayView, "TransactionPresenter#TransactionPresenter:" +
@@ -66,7 +66,7 @@ public class TransactionsPresenter implements DisplayTransContract.Presenter{
             public void onTrasactionsLoaded(List<Transaction> transactions) {
                 List<Transaction> transactionToShow = new ArrayList<Transaction>();
 
-                // We filter the tasks based on the request type
+                //We filter the tasks based on the request type
                 for (Transaction transaction: transactions){
                     switch (mCurrentFiltering){
                         case TODAY:
@@ -113,7 +113,6 @@ public class TransactionsPresenter implements DisplayTransContract.Presenter{
         } else {
             //Show list of transactions
             mDisplayView.showTransactions(transactionToShow);
-
             //Show filter label
         }
     }

@@ -13,7 +13,6 @@ import java.util.TreeSet;
 
 import com.example.transactioncard.database.ConstsDatabase;
 import com.example.transactioncard.database.TransactionTable;
-import com.example.transactioncard.dialogs.DialogTimeChange;
 import com.example.transactioncard.dialogs.DialogTimeRangeSelector;
 import com.example.transactioncard.dialogs.DialogTransactionNew;
 import com.example.transactioncard.dialogs.DialogTransactionNew.NoticeDialogListerner;
@@ -83,7 +82,7 @@ public class HomeActivity extends Activity implements OnNavigationListener,
 		/*
 		 * Set content view of the home, initializes home view(s) variables
 		 */
-		setContentView(R.layout.activity_home);
+		setContentView(R.layout.fragment_displaytrans);
 		initializeViewCompnentVariables();
 		homeActivityManager = new HomeActivityManager(this);
 		/*

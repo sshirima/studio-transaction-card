@@ -1,4 +1,4 @@
-package com.example.tcard.mvp.displaytransactions;
+package com.example.tcard.mvp.display;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,7 +7,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.test.ActivityUnitTestCase;
 import android.view.MenuItem;
 
 import com.example.tcard.mvp.Injection;
@@ -17,16 +16,16 @@ import com.example.transactioncard.R;
 /**
  * Created by sshirima on 9/21/16.
  */
-public class TransactionsActivity extends AppCompatActivity{
+public class DisplayTransActivity extends AppCompatActivity{
 
     private static final String CURRENT_FILTER_KEY = "CURRENT_FILTER_KEY";
-    private TransactionsPresenter mTransactionPresenter;
+    private DisplayTransPresenter mTransactionPresenter;
     private DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transactions);
+        setContentView(R.layout.activity_home);
         //Set up toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,18 +41,18 @@ public class TransactionsActivity extends AppCompatActivity{
             setupDrawerContent(navigationView);
         }
 
-        //Setup and start TransactionFragment
-        TransactionsFragment transactionsFragment = (TransactionsFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
+        //Setup and start TransactionFragment (View)
+        DisplayTransFragment transactionsFragment = (DisplayTransFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
 
         if (transactionsFragment == null){
             //Create Fragment
-            transactionsFragment = TransactionsFragment.newInstance();
+            transactionsFragment = DisplayTransFragment.newInstance();
             ActivityUtils.addFragmentToActivity(
                     getSupportFragmentManager(), transactionsFragment, R.id.contentFrame);
         }
 
-        //Create presenter
-        mTransactionPresenter = new TransactionsPresenter(
+        //Create transaction presenter
+        mTransactionPresenter = new DisplayTransPresenter(
                 Injection.provideTransactionCache(getApplicationContext()), transactionsFragment);
 
         //Load previously saved state, if available

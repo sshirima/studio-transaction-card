@@ -1,8 +1,8 @@
-package com.example.tcard.mvp.displaytransactions;
+package com.example.tcard.mvp.display;
 
 import com.example.tcard.mvp.BasePresenter;
 import com.example.tcard.mvp.BaseView;
-import com.example.tcard.mvp.utils.Transaction;
+import com.example.tcard.mvp.data.Transaction;
 
 import java.util.List;
 
